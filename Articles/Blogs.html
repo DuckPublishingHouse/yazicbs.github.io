@@ -81,14 +81,17 @@
                 color: #fcf5e8;
             }
 
-            /* --- [实验性]折叠与展开 --- */
-            .collapse-content {
-                display: none;
+            /* --- 折叠与展开 --- */
+            summary {
+                cursor: pointer;
+                outline: none;
+                padding: 10px;
+                background-color: #f0f0f0;
+                border: 1px solid #ccc;
             }
-            
-            .toggle-btn::after {
-                display: inline-block;
-                margin-left: 5px;
+
+            details[open] summary {
+                background-color: #ddd;
             }
             /* ------ */
         </style>
@@ -170,16 +173,12 @@
             <!--
                 折叠样式使用说明:
                 请在需要折叠的地方的前面添加上如下代码，已确保有按钮可以控制是否折叠。
-                <button onclick="toggleContent(n)" class="toggle-btn expanded"><span id="tc-span1">点我展开内容</span></button>
-                将(n)替换为对应的数，例如:
-                <button onclick="toggleContent(1)" class="toggle-btn expanded"><span id="tc-span1">点我折叠内容</span></button>
-                Note:请注意默认文本，默认折叠时是“点我展开内容”，反之是“点我折叠内容”
+                <details id="det2024060401">
+                    <summary id="sum2024060401">展开内容</summary>
+                    somethings
+                </details>
+                Note:请注意默认文本，默认折叠时是“展开内容”，反之是“折叠内容”
                     对应的默认状态请在代码末尾的JS脚本中设置。
-                
-                对于要折叠的元素，请使用如下代码框起来，并确保与按钮对应: (这里假设与按钮1对应)
-                <div id="content1" class="collapse-content">
-                    <p>需要折叠的内容</p>
-                </div>
             -->
 
             <!-- blog 样例 Start -->
@@ -199,11 +198,11 @@
             <div class="center-text">
                 <p id="20240626"><i>2024/6/26</i></p>
             </div>
-            <button onclick="toggleContent(7)" class="toggle-btn expanded"><span id="tc-span7">点我展开内容</span></button>
-            <div id="content7" class="collapse-content">
+            <details id="det20240626">
+                <summary id="sum20240626">展开内容</summary>
                 <p>前有<a href="#20240604">10 min can do anything</a>，后有一整个晚上5小时不间断打扰，现还有30min(我) vs 9h(我妈) = 你管我？</p>
                 <p>真·你是家长还是我是家长？ | 小学生都没用这么久！(说我) | 玩游戏 = 废掉了 | 我都看到你在玩了！</p>
-            </div>
+            </details>
             <hr />
             <!-- blog 样例 End -->
 
@@ -233,15 +232,15 @@
             <div class="center-text">
                 <p id="20240604"><i>2024/6/4</i></p>
             </div>
-            <button onclick="toggleContent(1)" class="toggle-btn expanded"><span id="tc-span1">点我折叠内容</span></button>
-            <div id="content1" class="collapse-content">
+            <details id="det2024060401" open>
+                <summary id="sum2024060401">折叠内容</summary>
                 <p><i>这只是一段故事，<span class="hidden_text">虽然真的发生过，但</span>没有任何评价的意思。</i></p>
                 <p>P1: 给你10分钟，够不够？</p>
                 <p>P2: 可以再多点吗，10分钟根本写不完...</p>
                 <p>P1: 你整天在那写写写的，要把重心放到学习上，知道吗？10分钟很多了。</p>
                 <p>P2(内心): 你的意思是十分钟做完以下操作吗？</p>
-                <button onclick="toggleContent(2)" class="toggle-btn expanded"><span id="tc-span2">点我展开内容</span></button>
-                <div id="content2" class="collapse-content">
+                <details id="det2024060402">
+                    <summary id="sum2024060402">展开内容</summary>
                     <ol>
                         <li><p>编写一个新程序</p></li>
                         <li><p>调试</p></li>
@@ -259,7 +258,7 @@
                         <li><p>(可能)上传&amp;发布发行版</p></li>
                         <li><p>(可能)编写更新说明</p></li>
                     </ol>
-                </div>
+                </details>
                 <p><em>5分钟后...</em></p>
                 <p>P1: 好了吗？</p>
                 <p>P2: ???这不才过5分钟吗？</p>
@@ -273,7 +272,7 @@
                 <p>P2: ...?你一直在这我写个头啊。</p>
                 <p><span class="hidden_text">这也是我为什么迟迟不更新的原因之一，本地已修改但无法推送(网络被关了)</span></p>
                 <p class="hidden_text">本地编写我也很烦啊，控制台都是<code class="hidden_text" style="background-color: rgba(0, 0, 0, 0)">net::ERR_INTERNET_DISCONNECTED</code>(<a href="#20240528" class="hidden_text">图片↓</a>)，根本看不清哪些是真的错误。</p>
-            </div>
+            </details>
             <hr />
             <!-- blog 样例 End -->
 
@@ -354,14 +353,14 @@
             <div class="center-text">
                 <p id="2024042301"><i>2024/4/23[1]</i></p>
             </div>
-            <button onclick="toggleContent(3)" class="toggle-btn expanded"><span id="tc-span3">点我展开内容</span></button>
-            <div id="content3" class="collapse-content">
+            <details id="det2024042301">
+                <summary id="sum2024042301">展开内容</summary>
                 <p class="hidden_text">(总结：2024/4/22 - 不如意的一天)</p>
                 <p>先是写代码 git 推送不了，然后又是背生物全都忘光了，又被说<span class="hidden_text">这些东西等到大学了你就会发现你现在弄的这些东西很幼稚了</span>...</p>
                 <p>到了晚上，我之前给一个项目提交的翻译 pr 被说过时，但是当我签出到最新分支时发现缺的一摸一样...<span class="hidden_text">(搞得我还建两个 PR ,主要是他还把旧的分支设为默认分支...)</span></p>
                 <p>电脑 D 盘和 C 盘也都红了，想让加点硬盘空间(以及内存，16G的内存虚拟机有时不够用)。结果我得到的回复把我搞傻了...</p>
                 <p class="hidden_text">“等到大学了再给你买台更<strong>高级</strong>的电脑(这句我还能接受)，到时候买个<strong>苹果的</strong>电脑(我现在用Windows表示macos是真的不会用啊)”</p>
-            </div>
+            </details>
             <hr />
             <!-- blog 样例 End -->
 
@@ -485,13 +484,13 @@
             <div class="center-text">
                 <p id="2024041504"><i>2024/4/15&nbsp;[4]</i></p>
             </div>
-            <button onclick="toggleContent(4)" class="toggle-btn expanded"><span id="tc-span4">点我展开内容</span></button>
-            <div id="content4" class="collapse-content">
+            <details id="det2024041504">
+                <summary id="sum2024041504">展开内容</summary>
                 <p>家长：“又在玩什么？(严肃的)”</p>
                 <p>我：“Visual Code.(摆烂的)”</p>
                 <p>家长：“一天天的就知道玩游戏，玩游戏能赚钱吗？”</p>
                 <p clss="hidden_text">...</p>
-            </div>
+            </details>
             <hr />
             <!-- blog 样例 End -->
 
@@ -510,8 +509,8 @@
                 <p id="2024041502"><i>2024/4/15&nbsp;[2]</i></p>
             </div>
             <p>一段吐槽：</p>
-            <button onclick="toggleContent(5)" class="toggle-btn expanded"><span id="tc-span5">点我展开内容</span></button>
-            <div id="content5" class="collapse-content">
+            <details id="det2024041502">
+                <summary id="sum2024041502">展开内容</summary>
                 <p>真的有点搞不懂现在的一些家长，自己孩子得了心理类的疾病(例如抑郁症等)接受不了就说“欸~孩子他啥病没有~都是他装的~”</p>
                 <p>更离谱的是还有<strong>医院确诊得了心理疾病的</strong>孩子的家长认为孩子没病装病，<strong>私自把孩子的药给停了</strong>(消息来源：车棍儿老师的哔哩哔哩视频)</p>
                 <p>你不相信你家孩子，可以。但是你可不可以听听医生的话啊？孩子是不是装病医生看得出来啊...</p>
@@ -525,7 +524,7 @@
                 <p class="hidden_text">今天我也尝试了一下向我家长询问“你觉得我们是不是应该要去*医院*看心理医生？”而我得到的回复却是...</p>
                 <p class="hidden_text">“还去看心理医生？我看你就是欠打。”</p>
                 <p>...</p>
-            </div>
+            </details>
             <hr />
             <!-- blog 样例 End -->
 
@@ -916,8 +915,8 @@
 
         <div class="container" style="margin-right: 30px; margin-left: 30px;">
             <h2 id="id">id命名格式说明</h2>
-            <button onclick="toggleContent(6)" class="toggle-btn expanded"><span id="tc-span6">点我展开内容</span></button>
-            <div id="content6" class="collapse-content">
+            <details id="det_id">
+                <summary id="sum_id">展开内容</summary>
                 <p>具体某篇Blog：aaaa年bb月cc日&nbsp;→&nbsp;aaaabbcc&nbsp;(e.g.&nbsp;20240418)</p>
                 <p>索引：</p>
                 <ul>
@@ -933,12 +932,12 @@
                     <li><p>统计: count</p></li>
                 </ul>
                 <p>在链接后面添上#id即可快速跳转，例如<a href="#index">https://duckduckstudio.github.io/yazicbs.github.io/Articles/Blogs.html#index</a>(快速跳转到Blog索引)</p>
-            </div>
+            </details>
         </div>
 
         <div class="container" style="margin-right: 30px; margin-left: 30px;">
             <h2 id="count">统计</h2>
-            <p><i>数据截至2024年6月9日 2点12分</i></p>
+            <p><i>数据截至2024年7月25日 12点00分</i></p>
             <table>
                 <thead>
                     <tr>
@@ -949,19 +948,15 @@
                 <tbody>
                     <tr>
                         <td>总篇数</td>
-                        <td>41</td>
-                    </tr>
-                    <tr>
-                        <td>总字数</td>
-                        <td>3046(估算)</td>
+                        <td>44</td>
                     </tr>
                     <tr>
                         <td>总代码行数</td>
-                        <td>963</td>
+                        <td>1013</td>
                     </tr>
                     <tr>
-                        <td>最后更新(统计)</td>
-                        <td>2024年6月9日</td>
+                        <td>最后更新</td>
+                        <td>2024年6月27日</td>
                     </tr>
                     <tr>
                         <td>最早发布</td>
@@ -987,32 +982,27 @@
         </div>
 
         <script>
-            function toggleContent(id) {
-                var content = document.getElementById('content' + id);
-                var btn = document.getElementsByClassName('toggle-btn')[id - 1];
-                if (content.style.display === 'none') {
-                    content.style.display = 'block';
-                    btn.classList.add('expanded');
-                    const tcSpan = document.getElementById('tc-span' + id);
-                    tcSpan.textContent = "点我折叠内容";
-                } else {
-                    content.style.display = 'none';
-                    btn.classList.remove('expanded');
-                    const tcSpan = document.getElementById('tc-span' + id);
-                    tcSpan.textContent = "点我展开内容";
-                }
+            function setupDetails(detailsId, summaryId) {
+                const details = document.getElementById(detailsId);
+                const summary = document.getElementById(summaryId);
+                
+                details.addEventListener('toggle', function() {
+                    if (details.open) {
+                        summary.textContent = '折叠内容';
+                    } else {
+                        summary.textContent = '展开内容';
+                    }
+                });
             }
-        
-            // 设置默认状态
-            document.getElementById('content1').style.display = 'block';
-            document.getElementById('content1').classList.add('expanded');//默认展开的要加
 
-            document.getElementById('content2').style.display = 'none';
-            document.getElementById('content3').style.display = 'none';
-            document.getElementById('content4').style.display = 'none';
-            document.getElementById('content5').style.display = 'none';
-            document.getElementById('content6').style.display = 'none';
-            document.getElementById('content7').style.display = 'none';
+            // 调用函数来设置每个折叠区域的行为
+            setupDetails('det2024041502', 'sum2024041502');
+            setupDetails('det2024041504', 'sum2024041504');
+            setupDetails('det2024042301', 'sum2024042301');
+            setupDetails('det2024060401', 'sum2024060401');
+            setupDetails('det2024060402', 'sum2024060402');
+            setupDetails('det20240626', 'sum20240626');
+            setupDetails('det_id', 'sum_id');
         </script>
     </body>
 </html>

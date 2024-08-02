@@ -1,11 +1,14 @@
 // 全局变量,用于存储随机数
+/* 
+* JS输出分类: 游戏-猜数字
+*/
 var gm_random_number;
 gm_random_number = "No_init";
 var guess_max = NaN;
 var guess_min = NaN;
 gm_init(0, 1000)
-console.log("[INFO] 试试 gm(n) 吗？[已自动初始化(Max:1000 | Min:0)]")
-console.warn("加载的游戏为简化版")
+console.log("[INFO(游戏-猜数字)] 试试 gm(n) 吗？[已自动初始化(Max:1000 | Min:0)]")
+console.warn("%c[WARN(游戏-猜数字-加载)]加载的游戏为简化版", "color: yellow;")
 
 // 创建一个函数,生成指定范围内的随机整数
 function gm_init(min, max) {

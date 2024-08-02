@@ -1,10 +1,13 @@
 // 全局变量,用于存储随机数
+/* 
+* JS输出分类: 游戏-猜数字
+*/
 var Guess_number_random_number;
 Guess_number_random_number = "No_init";
 var guess_max = NaN;
 var guess_min = NaN;
 Guess_number_init(0, 1000)
-console.log("[INFO] 试试 Guess_number(n) 吗？[已自动初始化(Max:1000 | Min:0)]")
+console.log("[INFO(游戏-猜数字)] 试试 Guess_number(n) 吗？[已自动初始化(Max:1000 | Min:0)]")
 
 // 创建一个函数,生成指定范围内的随机整数
 function Guess_number_init(min, max) {

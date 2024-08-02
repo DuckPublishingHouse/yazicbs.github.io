@@ -1301,105 +1301,64 @@ aooaa    a  aa  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a
                                                                                     <p>不会聊天...(万能的关键字)</p>
                                                                                     <p><del>整天在网页里写本地路径</del></p>
                                                                                     <script>
+                                                                                        /* 
+                                                                                        * JS输出分类: 位置
+                                                                                        */
                                                                                         fetch('https://ipapi.co/json/')
-                                                                                        .then(response => response.json())
-                                                                                        .then(data => {
-                                                                                            /*
-                                                                                            河北省
-                                                                                            石家庄市、唐山市、秦皇岛市、邯郸市、邢台市、保定市、张家口市、承德市、沧州市、廊坊市、衡水市
-                                                                                            山西省
-                                                                                            太原市、大同市、阳泉市、长治市、晋城市、朔州市、晋中市、运城市、忻州市、临汾市、吕梁市
-                                                                                            内蒙古自治区
-                                                                                            呼和浩特市、包头市、乌海市、赤峰市、通辽市、鄂尔多斯市、呼伦贝尔市、巴彦淖尔市、乌兰察布市
-                                                                                            辽宁省
-                                                                                            沈阳市、大连市、鞍山市、抚顺市、本溪市、丹东市、锦州市、营口市、阜新市、辽阳市、盘锦市、铁岭市、朝阳市、葫芦岛市
-                                                                                            吉林省
-                                                                                            长春市、吉林市、四平市、辽源市、通化市、白山市、松原市、白城市
-                                                                                            黑龙江省
-                                                                                            哈尔滨市、齐齐哈尔市、鸡西市、鹤岗市、双鸭山市、大庆市、伊春市、佳木斯市、七台河市、牡丹江市、黑河市、绥化市
-                                                                                            江苏省
-                                                                                            南京市、无锡市、徐州市、常州市、苏州市、南通市、连云港市、淮安市、盐城市、扬州市、镇江市、泰州市、宿迁市
-                                                                                            浙江省
-                                                                                            杭州市、宁波市、温州市、嘉兴市、湖州市、绍兴市、金华市、衢州市、舟山市、台州市、丽水市
-                                                                                            安徽省
-                                                                                            合肥市、芜湖市、蚌埠市、淮南市、马鞍山市、淮北市、铜陵市、安庆市、黄山市、滁州市、阜阳市、宿州市、六安市、亳州市、池州市、宣城市
-                                                                                            福建省
-                                                                                            福州市、厦门市、莆田市、三明市、泉州市、漳州市、南平市、龙岩市、宁德市
-                                                                                            江西省
-                                                                                            南昌市、景德镇市、萍乡市、九江市、新余市、鹰潭市、赣州市、吉安市、宜春市、抚州市、上饶市
-                                                                                            山东省
-                                                                                            济南市、青岛市、淄博市、枣庄市、东营市、烟台市、潍坊市、济宁市、泰安市、威海市、日照市、临沂市、德州市、聊城市、滨州市、菏泽市
-                                                                                            河南省
-                                                                                            郑州市、开封市、洛阳市、平顶山市、安阳市、鹤壁市、新乡市、焦作市、濮阳市、许昌市、漯河市、三门峡市、南阳市、商丘市、信阳市、周口市、驻马店市
-                                                                                            湖北省
-                                                                                            武汉市、黄石市、十堰市、宜昌市、襄阳市、鄂州市、荆门市、孝感市、荆州市、黄冈市、咸宁市、随州市
-                                                                                            湖南省
-                                                                                            长沙市、株洲市、湘潭市、衡阳市、邵阳市、岳阳市、常德市、张家界市、益阳市、郴州市、永州市、怀化市、娄底市
-                                                                                            广东省
-                                                                                            广州市、韶关市、深圳市、珠海市、汕头市、佛山市、江门市、湛江市、茂名市、肇庆市、惠州市、梅州市、汕尾市、河源市、阳江市、清远市、东莞市、中山市、潮州市、揭阳市、云浮市
-                                                                                            广西壮族自治区
-                                                                                            南宁市、柳州市、桂林市、梧州市、北海市、防城港市、钦州市、贵港市、玉林市、百色市、贺州市、河池市、来宾市、崇左市
-                                                                                            海南省
-                                                                                            海口市、三亚市、三沙市、儋州市
-                                                                                            四川省
-                                                                                            成都市、自贡市、攀枝花市、泸州市、德阳市、绵阳市、广元市、遂宁市、内江市、乐山市、南充市、眉山市、宜宾市、广安市、达州市、雅安市、巴中市、资阳市
-                                                                                            贵州省
-                                                                                            贵阳市、六盘水市、遵义市、安顺市、毕节市、铜仁市
-                                                                                            云南省
-                                                                                            昆明市、曲靖市、玉溪市、保山市、昭通市、丽江市、普洱市、临沧市
-                                                                                            西藏自治区
-                                                                                            拉萨市、日喀则市、昌都市、林芝市、山南市、那曲市
-                                                                                            陕西省
-                                                                                            西安市、铜川市、宝鸡市、咸阳市、渭南市、延安市、汉中市、榆林市、安康市、商洛市
-                                                                                            甘肃省
-                                                                                            兰州市、嘉峪关市、金昌市、白银市、天水市、武威市、张掖市、平凉市、酒泉市、庆阳市、定西市、陇南市
-                                                                                            青海省
-                                                                                            西宁市、海东市
-                                                                                            宁夏回族自治区
-                                                                                            银川市、石嘴山市、吴忠市、固原市、中卫市
-                                                                                            新疆维吾尔自治区
-                                                                                            乌鲁木齐市、克拉玛依市、吐鲁番市、哈密市
-                                                                                            台湾省
-                                                                                            台北市、新北市、桃园市、台中市、台南市、高雄市
-                                                                                            */
+                                                                                            .then(response => response.json())
+                                                                                            .then(data => {
+                                                                                                const city = data.city; // 城市 Zhangzhou
+                                                                                                const province = data.region; // 省份 Fujian
+                                                                                                const country = data.country_code; // 国家代码 CN
 
-                                                                                            const city = data.city;
-                                                                                            const province = data.region;
-                                                                                            const country = data.country;
+                                                                                                const cityMessages = {
+                                                                                                    'CN': {
+                                                                                                        'Fujian': {
+                                                                                                            'Xiamen': '厦门',
+                                                                                                            'Quanzhou': '泉州',
+                                                                                                            'Fuzhou': '福州',
+                                                                                                            'Putian': '莆田',
+                                                                                                            'Zhangzhou': '漳州',
+                                                                                                            'Nanping': '南平',
+                                                                                                            'Longyan': '龙岩',
+                                                                                                            'Sanming': '三明',
+                                                                                                            'Ningde': '宁德'
+                                                                                                        },
+                                                                                                        'Beijing': '北京',
+                                                                                                        'Shanghai': '上海',
+                                                                                                        'Tianjin': '天津',
+                                                                                                        'Chongqing': '重庆',
+                                                                                                    },
+                                                                                                };
 
-                                                                                            const cityMessages = {
-                                                                                                'Jinjiang': '晋江',
-                                                                                                'Xiamen': '厦门',
-                                                                                                'Fuzhou': '福州',
-                                                                                                'Quanzhou': '泉州',
-                                                                                                'Putian': '莆田',
-                                                                                                'Zhangzhou': '漳州',
-                                                                                                'Nanping': '南平',
-                                                                                                'Longyan': '龙岩',
-                                                                                                'Sanming': '三明',
-                                                                                                'Ningde': '宁德',
-                                                                                                /* --- Other city --- */
-                                                                                                'Beijing': '北京',
-                                                                                                'Shanghai': '上海',
-                                                                                            };
+                                                                                                let welcomeMessage = '';
 
-                                                                                            let welcomeMessage = '';
+                                                                                                if (country === 'CN') {
+                                                                                                    if (cityMessages[country][province][city]) {
+                                                                                                        welcomeMessage = `你好，${cityMessages[country][province][city]}！`;
+                                                                                                    } else {
+                                                                                                        console.warn("[WARN(位置-映射)] 你所在的地区没有被映射，请提交Issue或PR补充，记得带上控制台输出[TEST(位置)]")
+                                                                                                        welcomeMessage = `你好，${province}！`;
+                                                                                                    }
+                                                                                                } else if (country === 'JP') {
+                                                                                                    welcomeMessage = `こんにちは、${city || province}！`;
+                                                                                                } else {
+                                                                                                    welcomeMessage = `Hello, ${city || province}!`;
+                                                                                                }
 
-                                                                                            if (country === 'CN') {
-                                                                                                welcomeMessage = `你好，${cityMessages[city] || province}！`;
-                                                                                            } else if (country === 'JP') {
-                                                                                                welcomeMessage = `こんにちは、${city || province}！`;
-                                                                                            } else {
-                                                                                                welcomeMessage = `Hello, ${city || province}!`;
-                                                                                            }
+                                                                                                console.log(`%c[TEST(位置)] ${country} | ${province} | ${city}`, 'color: cyan;');
 
-                                                                                            console.log(welcomeMessage);
-
-                                                                                            const helloSpan = document.getElementById('hello-there');
-                                                                                            helloSpan.textContent = welcomeMessage;
-                                                                                        })
+                                                                                                const helloSpan = document.getElementById('hello-there');
+                                                                                                helloSpan.textContent = welcomeMessage;
+                                                                                            })
                                                                                         .catch(error => console.error('[ERROR]获取地区失败:', error));
-                                                                                        // ------- Location ↑ --- GitHub Status ↓ -------
+
+                                                                                        // ------- 位置 ↑ --- GitHub 状态 ↓ -------
+
+                                                                                        /* 
+                                                                                        * JS输出分类: GitHub状态
+                                                                                        */
+
                                                                                         const USERNAME = 'DuckDuckStudio';
 
                                                                                         async function getTotalStars() {
@@ -1412,7 +1371,7 @@ aooaa    a  aa  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a
                                                                                                 const response = await fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100&page=${page}`);
 
                                                                                                 if (!response.ok) {
-                                                                                                    throw new Error(`GitHub API 错误: ${response.statusText}`);
+                                                                                                    throw new Error(`[ERROR(GitHub状态-API)] GitHub API 错误: ${response.statusText}`);
                                                                                                 }
 
                                                                                                 const repos = await response.json();
@@ -1429,8 +1388,8 @@ aooaa    a  aa  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a
                                                                                                 //console.log(`一共获取到: ${totalStars} ⭐`);
                                                                                                 document.getElementById('total-stars').innerText = `${totalStars} ⭐`;
                                                                                             } catch (error) {
-                                                                                                console.error('GitHub Star 自动替换出错:', error);
-                                                                                                document.getElementById('total-stars').innerText = `❌ 数据获取出错`;
+                                                                                                console.error('[ERROR(GitHub状态-替换)] GitHub Star 自动替换出错:', error);
+                                                                                                document.getElementById('total-stars').innerText = `❌ 数据获取出错，参阅输出以获取更多信息`;
                                                                                             }
                                                                                         }
 
@@ -1467,7 +1426,7 @@ aooaa    a  aa  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a
                                                 </p>
                                                 <p>本网站由<strong>鸭鸭「カモ」</strong>建立，</p>
                                                 <p><strong>全站更新时间：<span id="commitTime">[加载中...]</span></strong></p>
-                                                <p><i>网站版本: v1.8.2</i></p>
+                                                <p><i>网站版本: v1.8.3</i></p>
                                                 <a href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/" target="_blank">点击查看我的一些小工具</a>
                                                 <br>
                                                 <a href="https://duckduckstudio.github.io/yazicbs.github.io/Articles/" target="_blank">点击查看我的文章</a>
@@ -1477,7 +1436,7 @@ aooaa    a  aa  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a
                                                 <p>本网站专为电脑端制作，手机端如有显示问题敬请谅解，谢谢！</p>
                                                 <!-- 周年庆祝 -->
                                                 <p id="year-happy" style="display: none;"><strong>庆祝某鸭的小站建立 <span id="year-difference"></span> 周年!</strong></p>
-                                                <p>©Duck studio 2021 - <span id="now_year">[加载中...]</span></p>
+                                                <p>©Duck studio 2021 - <span id="now_year">2024</span></p>
                                                 <script>
                                                     /* 周年庆祝文本显示(自动修改&显示) */
                                                     window.onload = function() {
@@ -1538,6 +1497,9 @@ aooaa    a  aa  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a
                                                 <p><strong><span id="commitMessage">[加载中...]</span></strong></p>
                                                 <!-- 使用GitHub API 获取最新 Git message -->
                                                 <script>
+                                                    /* 
+                                                    * JS输出分类: 提交
+                                                    */
                                                     const repoUrl = 'https://api.github.com/repos/DuckDuckStudio/yazicbs.github.io/commits';
 
                                                     fetch(repoUrl)
@@ -1562,7 +1524,7 @@ aooaa    a  aa  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a
                                                             document.getElementById('commitTime').innerHTML = formattedDateTime;
                                                         })
                                                         .catch(error => {
-                                                            console.error('[ERROR]无法获取GitHub上的最新提交信息:', error);
+                                                            console.error('[ERROR(提交)]无法获取GitHub上的最新提交信息:', error);
                                                             document.getElementById('commitMessage').innerHTML = '[加载失败，请检查网络或联系网站管理员]';
                                                         });
                                                 </script>

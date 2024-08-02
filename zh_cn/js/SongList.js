@@ -1,6 +1,10 @@
 // 网页左下角的歌单
 // Song url:https://music.163.com/song/media/outer/url?id=****.mp3 (****处填音乐id)
 
+/* 
+* JS输出分类: 歌单
+*/
+
 /* 随机 */
 // 歌单列表
 var playlists = [
@@ -58,15 +62,6 @@ var playlists = [
             pic: 'https://p2.music.126.net/awzv1LpuBJiKTeB7roh_Aw==/109951168434956885.jpg'
         },
     ],
-    // 日推
-    /*[
-        {
-            title: '散る散る満ちる',
-            author: '伶',
-            url: 'https://music.163.com/song/media/outer/url?id=1907015019.mp3',
-            pic: 'http://p1.music.126.net/vhnGt0pX0TDI9kEOhT6sow==/109951166845367110.jpg'
-        }
-    ]*/
 ];
 
 // 从歌单列表中随机选择一个歌单
@@ -82,7 +77,7 @@ const playlistNames = {
     2: "原神",
     3: "崩坏3",
     //4: "日推",
-    default: "[WARN] 未定义歌单名称"
+    default: "[WARN(歌单-选择-索引越界)] 未定义歌单名称"
     // 最后更新分类：2024/6/20
 };
 
@@ -91,7 +86,7 @@ const SongListSet = playlistNames[randomPlaylistIndex] || playlistNames.default;
 
 const logMessage = SongListSet === playlistNames.default ?
     console.warn(`${SongListSet}，随机到的数字是${randomPlaylistIndex}`) :
-    console.log(`[INFO] 选中歌单 [${SongListSet}]`);
+    console.log(`[INFO(歌单)] 选中歌单 [${SongListSet}]`);
 
 /* -----END----- */
 

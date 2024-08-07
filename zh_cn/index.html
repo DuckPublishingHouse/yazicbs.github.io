@@ -1324,6 +1324,9 @@ aooaa    a  aa  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a
                                                                                                             'Sanming': '三明',
                                                                                                             'Ningde': '宁德'
                                                                                                         },
+                                                                                                        'Guangdong': {
+                                                                                                            'Guangzhou': '广州'
+                                                                                                        },
                                                                                                         'Beijing': '北京',
                                                                                                         'Shanghai': '上海',
                                                                                                         'Tianjin': '天津',
@@ -1334,11 +1337,11 @@ aooaa    a  aa  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a
                                                                                                 let welcomeMessage = '';
 
                                                                                                 if (country === 'CN') {
-                                                                                                    if (cityMessages[country][province][city]) {
-                                                                                                        welcomeMessage = `你好，${cityMessages[country][province][city] || city || province}！`;
+                                                                                                    if (cityMessages[country] && cityMessages[country][province] && cityMessages[country][province][city]) {
+                                                                                                        welcomeMessage = `你好，${cityMessages[country][province][city]}！`;
                                                                                                     } else {
                                                                                                         console.warn("[WARN(位置-映射)] 你所在的地区没有被映射，请提交Issue或PR补充，记得带上控制台输出[TEST(位置)]")
-                                                                                                        welcomeMessage = `你好，${province}！`;
+                                                                                                        welcomeMessage = `你好，${city || province}！`;
                                                                                                     }
                                                                                                 } else if (country === 'JP') {
                                                                                                     welcomeMessage = `こんにちは、${city || province}！`;
@@ -1351,7 +1354,7 @@ aooaa    a  aa  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a
                                                                                                 const helloSpan = document.getElementById('hello-there');
                                                                                                 helloSpan.textContent = welcomeMessage;
                                                                                             })
-                                                                                        .catch(error => console.error('[ERROR]获取地区失败:', error));
+                                                                                        .catch(error => console.error('[ERROR(位置)]获取地区失败:', error));
 
                                                                                         // ------- 位置 ↑ --- GitHub 状态 ↓ -------
 

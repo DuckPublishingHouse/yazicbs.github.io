@@ -1,3 +1,8 @@
 .vs/
 test/
+# python
 .venv/
+# npm
+node_modules/
+package-lock.json
+package.json

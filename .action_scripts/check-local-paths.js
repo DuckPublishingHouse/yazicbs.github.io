@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const glob = require('glob');
 
-const pattern = /([A-Z]:\\|\/)[^\\/:*?"<>|\r\n]*/g; // 匹配 Windows 和 Unix 风格路径的正则表达式
+const pattern = /([A-Z]:\\|\/)[^\\/:*?"<>|\r\n]*/g;
 const files = ['**/*.html', '**/*.js', '**/*.css'];
 
 files.forEach(globPattern => {

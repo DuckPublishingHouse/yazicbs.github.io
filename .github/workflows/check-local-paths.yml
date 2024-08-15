@@ -22,7 +22,7 @@ jobs:
         node-version: '20'
 
     - name: 安装依赖
-      run: npm install -g glob
+      run: npm install glob
 
     - name: 运行本地路径检查
       run: node ./.action_scripts/check-local-paths.js

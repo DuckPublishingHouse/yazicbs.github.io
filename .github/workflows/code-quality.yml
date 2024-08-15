@@ -23,13 +23,13 @@ jobs:
         node-version: '18'
 
     - name: 安装依赖
-      run: npm install --save-dev eslint prettier stylelint
+      run: npm install htmlhint stylelint eslint --save-dev
 
-    - name: 运行 ESLint
-      run: npx eslint . --ext .js
+    - name: 检查 html 代码规范
+      run: npx htmlhint "**/*.html"
 
-    - name: 运行 Prettier
-      run: npx prettier --check .
-
-    - name: 运行 stylelint
+    - name: 检查 css 样式规范
       run: npx stylelint "**/*.css"
+
+    - name: 检查 js 脚本规范
+      run: npx eslint "**/*.js"

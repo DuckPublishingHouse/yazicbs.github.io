@@ -23,7 +23,7 @@ jobs:
         node-version: '18'
 
     - name: 安装依赖
-      run: npm install
+      run: npm install --save-dev eslint prettier stylelint
 
     - name: 运行 ESLint
       run: npx eslint . --ext .js

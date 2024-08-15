@@ -25,10 +25,12 @@ jobs:
     - name: 安装依赖
       run: |
         npm install htmlhint --save-dev
-        npm init stylelint
+        npm install @eslint/create-config@1.3.1
         npm init @eslint/config
+        npm init stylelint  
 
     - name: 检查 html 代码规范
+      # https://htmlhint.com/docs/user-guide/getting-started
       run: npx htmlhint "**/*.html"
       continue-on-error: true
 

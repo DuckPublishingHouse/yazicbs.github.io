@@ -2,7 +2,7 @@ name: 代码质量检查
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened] # PR 创建、更新和重新打开时触发
+    types: [opened, synchronize, reopened]
   push:
     branches: 
       - '*'
@@ -23,16 +23,21 @@ jobs:
         node-version: '18'
 
     - name: 安装依赖
-      run: npm install htmlhint stylelint eslint --save-dev
+      run: |
+        npm install htmlhint --save-dev
+        npm init stylelint
+        npm init @eslint/config
 
     - name: 检查 html 代码规范
       run: npx htmlhint "**/*.html"
       continue-on-error: true
 
     - name: 检查 css 样式规范
+      # https://www.stylelint.cn/user-guide/get-started#linting-css-like-languages-and-css-within-containers
       run: npx stylelint "**/*.css"
       continue-on-error: true
 
     - name: 检查 js 脚本规范
+      # https://zh-hans.eslint.org/docs/latest/use/getting-started
       run: npx eslint "**/*.js"
       continue-on-error: true

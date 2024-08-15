@@ -1,0 +1,28 @@
+name: 检查本地路径
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-local-paths:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+
+    - name: 设置 Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - name: 安装依赖
+      run: npm install -g glob
+
+    - name: 运行本地路径检查
+      run: node ./.action_scripts/check-local-paths.js

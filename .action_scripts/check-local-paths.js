@@ -13,7 +13,7 @@ const skipFiles = [
 
 // 自定义跳过文件夹列表（使用相对路径）
 const skipFolders = [
-    'Tools\\Fufu_Tools\\wiki',
+    'Tools/Fufu_Tools/wiki',
 ];
 
 let foundPath = false; // 用于跟踪是否已经找到路径
@@ -21,11 +21,11 @@ let foundPath = false; // 用于跟踪是否已经找到路径
 files.forEach(globPattern => {
     const filePaths = glob.sync(globPattern, { nodir: true });
     filePaths.forEach(filePath => {
-        // 获取相对路径
-        const relativePath = path.relative(process.cwd(), filePath);
+        // 获取相对路径，并标准化路径分隔符
+        const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
 
         // 检查是否在跳过的文件夹中
-        if (skipFolders.some(folder => relativePath.startsWith(folder))) {
+        if (skipFolders.some(folder => relativePath.startsWith(folder.replace(/\\/g, '/')))) {
             return;
         }
 

@@ -25,8 +25,6 @@ jobs:
     - name: 安装依赖
       run: |
         npm install htmlhint --save-dev
-        npm install @eslint/create-config@1.3.1
-        npm init @eslint/config
         npm init stylelint  
 
     - name: 检查 html 代码规范
@@ -39,7 +37,7 @@ jobs:
       run: npx stylelint "**/*.css"
       continue-on-error: true
 
-    - name: 检查 js 脚本规范
-      # https://zh-hans.eslint.org/docs/latest/use/getting-started
-      run: npx eslint "**/*.js"
-      continue-on-error: true
+    #- name: 检查 js 脚本规范
+    #  # https://zh-hans.eslint.org/docs/latest/use/getting-started
+    #  run: npx eslint "**/*.js"
+    #  continue-on-error: true

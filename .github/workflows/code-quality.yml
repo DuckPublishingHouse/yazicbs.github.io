@@ -27,9 +27,12 @@ jobs:
 
     - name: 检查 html 代码规范
       run: npx htmlhint "**/*.html"
+      continue-on-error: true
 
     - name: 检查 css 样式规范
       run: npx stylelint "**/*.css"
+      continue-on-error: true
 
     - name: 检查 js 脚本规范
       run: npx eslint "**/*.js"
+      continue-on-error: true

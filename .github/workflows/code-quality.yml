@@ -1,0 +1,35 @@
+name: 代码质量检查
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened] # PR 创建、更新和重新打开时触发
+  push:
+    branches: 
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  lint-and-format:
+    name: 代码检查与格式化
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+
+    - name: 设置 Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: 安装依赖
+      run: npm install
+
+    - name: 运行 ESLint
+      run: npx eslint . --ext .js
+
+    - name: 运行 Prettier
+      run: npx prettier --check .
+
+    - name: 运行 stylelint
+      run: npx stylelint "**/*.css"

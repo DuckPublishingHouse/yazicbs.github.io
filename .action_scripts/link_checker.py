@@ -10,6 +10,14 @@ IGNORE_URLS = [
     'https://space.bilibili.com/2054654702/',
     'https://duckduckstudio.github.io/yazicbs.github.io/Interesting/sounds/*.mp3',
     'https://duckduckstudio.github.io/yazicbs.github.io/Interesting/sounds/*.mp3--,',
+    'https://duckduckstudio.github.io/yazicbs.github.io/music_games/photos/show.png',
+    'https://duckduckstudio.github.io/yazicbs.github.io/music_games/photos/Arcaea/[SongName]-SCORE-EXp-FR.png',
+    'https://duckduckstudio.github.io/yazicbs.github.io/music_games/photos/GenshinImpact/[SongName]-SCORE-LEVER.png',
+    'https://duckduckstudio.github.io/yazicbs.github.io/music_games/photos/MuseDash/[SongName]-SCORE-LEVER.png',
+    'https://duckduckstudio.github.io/yazicbs.github.io/music_games/photos/Orzmic/[SongName]-SCORE-LEVER.png',
+    'https://duckduckstudio.github.io/yazicbs.github.io/music_games/photos/Other/[SongName]-SCORE-LEVER.png',
+    'https://duckduckstudio.github.io/yazicbs.github.io/music_games/photos/Phigros/[SongName]-SCORE-LEVER.png',
+    'https://duckduckstudio.github.io/yazicbs.github.io/music_games/photos/Project_Sekai/[SongName]-SCORE-LEVER.png'
 ] # 忽略的链接
 
 # 更新后的链接正则表达式

@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 import requests
 
 # 配置
@@ -56,6 +57,7 @@ def check_files():
                                 print(f'\n[WARN] 文件: {file}, 行号: {line_number}, 链接: {url}, 返回代码: {status_code}')
                             elif status_message == "faild":
                                 print(f'\n[ERROR] 文件: {file}, 行号: {line_number}, 链接: {url}, 返回代码: {status_code}')
+                                sys.exit(1)
 
 if __name__ == '__main__':
     check_files()

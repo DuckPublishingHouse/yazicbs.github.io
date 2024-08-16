@@ -17,8 +17,8 @@ URL_REGEX = re.compile(r'"https://[^\'"\n\r\s<>]*(?=[\'"])')
 
 def check_link(url):
     url = url.strip('\'"') # 去除引号
-    if file_route.startswith(("'", '"')):
-        file_route = file_route[1:]
+    if url.startswith(("'", '"')):
+        url = url[1:]
     if url in IGNORE_URLS:
         return 'Ignored URL', 'ignored'
     try:

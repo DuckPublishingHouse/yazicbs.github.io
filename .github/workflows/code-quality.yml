@@ -42,5 +42,5 @@ jobs:
 
     - name: 检查 js 脚本规范
     #  # https://zh-hans.eslint.org/docs/latest/use/getting-started
-    #  run: npx eslint "**/*.js"
+      run: npx eslint "**/*.js"
     #  continue-on-error: true

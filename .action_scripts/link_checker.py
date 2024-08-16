@@ -13,7 +13,7 @@ IGNORE_URLS = [
 ] # 忽略的链接
 
 # 更新后的链接正则表达式
-URL_REGEX = re.compile(r'https://[^\'"\n\r\s<>]*(?=[\'"])')
+URL_REGEX = re.compile(r'"https://[^\'"\n\r\s<>]*(?=[\'"])')
 
 def check_link(url):
     url = url.strip('\'"') # 去除引号

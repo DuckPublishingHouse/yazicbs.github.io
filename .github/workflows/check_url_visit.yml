@@ -26,5 +26,5 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
 
-    - name: 运行本地路径检查
+    - name: 检查链接有效性
       run: python ./.action_scripts/link_checker.py

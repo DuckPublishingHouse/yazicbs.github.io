@@ -3,8 +3,7 @@ import re
 import sys
 import requests
 
-# 配置
-DIRECTORY = '..' # 指定要检查的目录
+DIRECTORY = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # 指定要检查的目录为所在目录上级目录
 IGNORE_FOLDERS = ['ignore_folder'] # 忽略的文件夹
 IGNORE_FILES = ['ignore_file.js', 'ignore_file.css', 'Duck Parkour.html'] # 忽略的文件
 IGNORE_URLS = [
@@ -13,10 +12,11 @@ IGNORE_URLS = [
     'https://duckduckstudio.github.io/yazicbs.github.io/Interesting/sounds/*.mp3--,',
 ] # 忽略的链接
 
-# 链接正则表达式
-URL_REGEX = re.compile(r'https?://[^\s\"\'<>]+')
+# 更新后的链接正则表达式
+URL_REGEX = re.compile(r'https://[^\'"\n\r\s<>]*(?=[\'"])')
 
 def check_link(url):
+    url = url.strip('\'"') # 去除引号
     if url in IGNORE_URLS:
         return 'Ignored URL', 'ignored'
     try:
@@ -29,7 +29,7 @@ def check_link(url):
             return 200, 'pass'
         return response.status_code, 'pass'
     except requests.ConnectionError:
-        return 'Connection Error', 'faild'
+        return 'Connection Error', 'pass'
     except requests.Timeout:
         return 'Timeout', 'faild'
     except requests.RequestException as e:

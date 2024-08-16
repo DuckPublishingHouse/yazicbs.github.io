@@ -43,6 +43,7 @@ def check_files():
                 continue
             
             file_path = os.path.join(root, file)
+            relative_file_path = os.path.relpath(file_path, DIRECTORY) # 计算相对路径
             with open(file_path, 'r', encoding='utf-8') as f:
                 for line_number, line in enumerate(f, start=1):
                     urls = URL_REGEX.findall(line)
@@ -54,9 +55,9 @@ def check_files():
                             print('*', end='')
                         else:
                             if status_message == "pass":
-                                print(f'\n[WARN] 文件: {file}, 行号: {line_number}, 链接: {url}, 返回代码: {status_code}')
+                                print(f'\n[WARN] 文件: {relative_file_path}, 行号: {line_number}, 链接: {url}, 返回代码: {status_code}')
                             elif status_message == "faild":
-                                print(f'\n[ERROR] 文件: {file}, 行号: {line_number}, 链接: {url}, 返回代码: {status_code}')
+                                print(f'\n[ERROR] 文件: {relative_file_path}, 行号: {line_number}, 链接: {url}, 返回代码: {status_code}')
                                 sys.exit(1)
 
 if __name__ == '__main__':

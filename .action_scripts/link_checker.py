@@ -6,7 +6,7 @@ import requests
 # 配置
 DIRECTORY = '..' # 指定要检查的目录
 IGNORE_FOLDERS = ['ignore_folder'] # 忽略的文件夹
-IGNORE_FILES = ['ignore_file.js', 'ignore_file.css'] # 忽略的文件
+IGNORE_FILES = ['ignore_file.js', 'ignore_file.css', 'Duck Parkour.html'] # 忽略的文件
 IGNORE_URLS = ['https://space.bilibili.com/2054654702/'] # 忽略的链接
 
 # 链接正则表达式

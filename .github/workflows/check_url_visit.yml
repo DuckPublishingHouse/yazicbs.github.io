@@ -1,0 +1,30 @@
+name: 检查链接有效性
+
+on:
+  schedule: # 夜间执行
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 手动执行
+  pull_request: # PR执行
+    branches:
+      - main
+
+jobs:
+  check-local-paths:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+
+    - name: 设置 Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: 安装依赖
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: 运行本地路径检查
+      run: python ./.action_scripts/link_checker.py

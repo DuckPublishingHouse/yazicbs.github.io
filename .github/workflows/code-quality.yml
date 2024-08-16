@@ -24,6 +24,7 @@ jobs:
 
     - name: 安装依赖
       run: |
+        npm init
         npm install htmlhint --save-dev
         npm init stylelint  
 

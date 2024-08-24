@@ -12,7 +12,7 @@ on:
       - main
 
 jobs:
-  check-local-paths:
+  check-url:
     runs-on: ubuntu-latest
 
     steps:

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Debug] 鸭鸭工作室 | Debug控制台</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #console {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+        }
+        .warn {
+            color: orange;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+        // 更新控制台显示的函数
+        function updateConsole(message, type) {
+            const consoleDiv = document.getElementById('console');
+            const className = type ? type : '';
+            consoleDiv.innerHTML += `<div class="${className}">${message}</div>`;
+            consoleDiv.scrollTop = consoleDiv.scrollHeight; // 自动滚动到底部
+        }
+
+        // 保留原始的 console 函数
+        const originalConsoleLog = console.log;
+        const originalConsoleWarn = console.warn;
+        const originalConsoleError = console.error;
+
+        // 重写 console.log 使其同时显示在网页上
+        console.log = function(...args) {
+            const message = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg).join(' ');
+            updateConsole(message);
+            originalConsoleLog.apply(console, args);
+        };
+
+        // 重写 console.warn 使其同时显示在网页上，并以警告样式显示
+        console.warn = function(...args) {
+            const message = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg).join(' ');
+            updateConsole(message, 'warn');
+            originalConsoleWarn.apply(console, args);
+        };
+
+        // 重写 console.error 使其同时显示在网页上，并以错误样式显示
+        console.error = function(...args) {
+            const message = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg).join(' ');
+            updateConsole(message, 'error');
+            originalConsoleError.apply(console, args);
+        };
+    </script>
+</head>
+<body>
+    <h1>调试控制台信息</h1>
+    <div id="console"></div>
+    <script>
+        // zh_cn/index 200-232
+        const now_text = new Date();
+        const currentHour = now_text.getHours(); // 获取当前小时数
+        var txt;
+        if ((currentHour >= 0 && currentHour < 5) || (currentHour >= 22 && currentHour < 24)) {
+            txt = "还不睡觉呢? 小猫~";
+        } else if (currentHour >= 5 && currentHour < 8) {
+            txt = "早起的小虫有鸟吃~";
+        } else if (currentHour >= 9 && currentHour < 11) {
+            txt = "一日之计在于晨，想好要做什么了吗？";
+        } else if (currentHour >= 12 && currentHour < 14) {
+            txt = "o((>ω< ))o 太阳这么大要晒化掉了 (南方)";
+        } else if (currentHour >= 14 && currentHour < 16) {
+            txt = "下午要做什么捏？";
+        } else if (currentHour >= 17 && currentHour < 18) {
+            txt = "你那的晚霞好看吗？";
+        } else if (currentHour >= 19 && currentHour < 21) {
+            txt = "⭐SUPER NIGHT TIME⭐";
+        }
+
+        console.log(`%c[TEST(标语-时间)] 当前时间 ${now_text} | ${currentHour}时 | ${txt}`, "color: cyan;")
+    </script>
+</body>
+</html>

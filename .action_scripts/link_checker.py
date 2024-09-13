@@ -8,6 +8,7 @@ IGNORE_FOLDERS = ['music_games'] # 忽略的文件夹
 IGNORE_FILES = ['ignore_file.js', 'ignore_file.css', 'Duck Parkour.html'] # 忽略的文件
 IGNORE_URLS = [
     'https://space.bilibili.com/2054654702/',
+    'https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/wiki/error/',
     'https://duckduckstudio.github.io/yazicbs.github.io/Interesting/sounds/*.mp3',
     'https://duckduckstudio.github.io/yazicbs.github.io/Interesting/sounds/*.mp3--,',
     'https://duckduckstudio.github.io/yazicbs.github.io/music_games/photos/show.png',

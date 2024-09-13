@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!-- Code by Duck Studio -->
+<!-- ©鸭鸭「カモ」 (包括图片) -->
+<html lang="zh">
+    <head>
+        <title>芙芙工具箱&nbsp;|&nbsp;错误信息文档</title>
+        <link rel="icon" type="image/png" href="https://duckduckstudio.github.io/yazicbs.github.io/icos/Fufu_Tools.png">
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <!--编码UTF-8-->
+        <meta content="width=device-width,initial-scale=1.0,user-scalable=yes,minimum-scale=1.0,maximum-scale=3.0" id="viewport" name="viewport">
+        <!--移动设备优化，允许缩放-->
+        <meta content="芙芙工具箱 - 错误信息文档" name="description">
+        <!--定义了网页的描述，用于搜索引擎显示网页摘要-->
+        <meta content="鸭鸭工作室,鸭鸭「カモ」,DuckStudio,DuckDuckStudio,Fufu_Tools,芙芙工具箱,文档" name="keywords">
+        <!--定义与网页相关的关键词-->
+        <script>
+            console.log(`
+                aaaad                 a         oaaa                   a  a             
+                a     a          vav  a   a     a      a            hh a       bg       
+                a     a  h   a  a     a a        aad  aaa  a   u  a    a  a  a    a     
+                a     a  h   a  c     a a           a  a   a   s  a    a  a  a    a     
+                aooaa    a a a  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a      
+            
+                本站维护人员：
+                鸭鸭「カモ」
+                欢迎关注我们的bilibili频道：@鸭鸭_カモ
+                https://space.bilibili.com/2054654702/
+                回到主页：https://duckduckstudio.github.io/yazicbs.github.io/
+            `)
+        </script>
+        <style>
+            body {
+                background-color: #6dc0ede1; /* 蓝色背景 */
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: Arial, sans-serif;
+            }
+            
+            /* 扩距
+            *    margin-top: 1%;
+            *    margin-bottom: 1%;
+            *    margin-left: 1%;
+            *    margin-right: 1%;
+            *    such as: <div class="container" style="margin-right: 1%; margin-left: 1%;">左右扩距</div>
+            */
+            
+            .container {
+                background-color: rgba(255, 255, 255, 0.7); /* 亚克力效果垫底 */
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+
+            h1 {
+                color: #333;
+                font-size: 40px;
+            }
+
+            h2 {
+                color: #333;
+                font-size: 24px; /* 调整标题文本大小 */
+                margin-bottom: 10px; /* 调整标题与下方段落的间距 */
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+        <!-- 芙芙工具箱网页通用样式 by鸭鸭「カモ」 -->
+        <link rel="stylesheet" href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/css/universal.css">
+    </head>
+    <body>
+        <!-- width / height only can use int. -->
+        <div class="container" style="margin-top: 1%; margin-right: 1%; margin-left: 1%;">
+            <div class="center-text">
+                <img src="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/photos/展示图.png" alt="展示图" width="960" height="540">
+            </div>
+            <p>&nbsp;</p>
+
+            <div class="center-text">
+                <h1>芙芙工具箱错误信息文档</h1>
+                <i>适用于芙芙工具箱&nbsp;for&nbsp;windows<br>更新进度: 已填写完实验性工具的错误<br>错误实在太多种了，目录有缘再做，先用<code>Ctrl</code>+<code>F</code>凑合下。</i>
+                <p>&nbsp;</p>
+            </div>
+
+            <div class="container">
+                <h2 id="实验性工具">实验性工具</h2>
+                <h3>定时闹钟</h3>
+                <ul>
+                    <li>
+                        <h4>✕ 未找到铃声文件或铃声文件不唯一</h4>
+                        <p>请检查铃声文件目录 (程序所在目录下的<code>铃声文件</code>文件夹) 中是否<strong>有且只有一个 <code>mp3</code></strong>格式的铃声文件。</p>
+                        <ul>
+                            <li>有且只有一个<code>mp3</code>格式的文件
+                                <ul><li><a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a></li></ul>
+                            </li>
+                            <li>有不止一个<code>mp3</code>格式的文件
+                                <ul><li>你只能保留<strong>一个</strong>铃声文件</li></ul>
+                            </li>
+                            <li>没有<code>mp3</code>格式的文件
+                                <ul><li>你只能<strong>提供一个</strong>铃声文件</li></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>FileNotFoundError: [WinError 3] 系统找不到指定的路径。: './铃声文件'</h4>
+                        <p>请检查铃声文件目录 (程序所在目录下的<code>铃声文件</code>文件夹) <strong>是否存在</strong>。</p>
+                        <ul>
+                            <li>存在
+                                <ul><li><a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a></li></ul>
+                            </li>
+                            <li>不存在
+                                <ul><li>新建一个</li></ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr />
+                <h3>搜索引擎索引检测</h3>
+                <ul>
+                    <li>
+                        <h4>[ERROR] 不支持的搜索引擎</h4>
+                        <p>请<a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a>。</p>
+                    </li>
+                    <li>
+                        <h4>[ERROR] 无法连接到 <code>{search_engine}</code>，请检查您的网络连接</h4>
+                        <p>请尝试手动访问以下对应网址，确认对应的网址确实可以正常访问。</p>
+                        <ul>
+                            <li>百度 → <a href="https://www.baidu.com/" target="_blank">https://www.baidu.com/</a></li>
+                            <li>必应 → <a href="https://www.bing.com/" target="_blank">https://www.bing.com/</a> (≠<code>https://cn.bing.com/</code>)</li>
+                            <li>谷歌 → <a href="https://www.google.com/" target="_blank">https://www.google.com/</a></li>
+                            <li>雅虎 → <a href="https://search.yahoo.com/" target="_blank">https://search.yahoo.com/</a></li>
+                        </ul>
+                        如果:
+                        <ul>
+                            <li>都能在浏览器中正常访问
+                                <ul><li>在终端中<code>ping</code>*对应的网址</li></ul>
+                                <ul>
+                                    <li><code>ping</code>*通
+                                        <ul><li><a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a></li></ul>
+                                    </li>
+                                    <li><code>ping</code>*不通
+                                        <ul><li>请自行修复连接，我对此无法提供任何帮助</li></ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>无法访问
+                                <ul><li>请自行修复连接，我对此无法提供任何帮助</li></ul>
+                            </li>
+                        </ul>
+                        <p><i>相关文档:</i></p>
+                        <ul>
+                            <li>*<a href="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/ping" target="_blank">ping | Microsoft Learn</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>[ERROR] 检查 <code>{search_engine}</code> 时发生错误：<code>{e}</code></h4>
+                        <p>请<a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a>。</p>
+                    </li>
+                </ul>
+                <hr />
+                <h3>批量水印添加</h3>
+                <ul>
+                    <li>
+                        <h4>[WARN] 请输入图片文件夹路径</h4>
+                        <p>指定的文件夹路径不能为空。</p>
+                    </li>
+                    <li>
+                        <h4>[WARN] 无效路径 / <span>[WARN] 自定义字体文件不存在</span></h4>
+                        <p>您指定的路径不存在。</p>
+                    </li>
+                    <li>
+                        <h4>[WARN] 仅支持16:9的图片。错误文件: <code>{image_path}</code></h4>
+                        <p>请换一张<strong>16:9</strong>的图。如果你确定图片本来就是<strong>16:9</strong>，请<a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a>。</p>
+                    </li>
+                    <li>
+                        <h4>[ERROR] 添加水印时出现错误: <code>{e}</code></h4>
+                        <p>请<a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a>。</p>
+                    </li>
+                </ul>
+                <hr />
+                <h3>视频音频提取</h3>
+                <ul>
+                    <li>
+                        <h4>[ERROR] 视频文件不存在</h4>
+                        <p>您指定的路径不存在。</p>
+                    </li>
+                    <li>
+                        <h4>错误: <code>{e}</code></h4>
+                        <p>请<a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a>。</p>
+                    </li>
+                </ul>
+                <hr />
+                <h3>音频base64编解码</h3>
+                <ul>
+                    <li>
+                        <h4>✕ 请选择一个文件夹 / <span>✕ 文件名不能为空 / <span>✕ 请选择一个音频文件，重启程序以重试</span> / <span>✕ 请选择一个正确的项</span></h4>
+                        <p>请按照错误提示解决。</p>
+                    </li>
+                    <li>
+                        <h4>✕ 文件名不合法</h4>
+                        <p>文件名不能包含下列任何字符:</p>
+                        <p><code>\</code>、<code>/</code>、<code>:</code>、<code>*</code>、<code>?</code>、<code>"</code>、<code>&lt;</code>、<code>&gt;</code>、<code>|</code></p>
+                    </li>
+                    <li>
+                        <h4>✕ 文件处理出错: <code>{e}</code> / <span>✕ 处理时出错: <code>{e}</code></span> / <span>✕ 编码时出现错误: <code>{e}</code></span></h4>
+                        <p>请<a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a>。</p>
+                    </li>
+                </ul>
+                <hr />
+                <h3>时间单位转换</h3>
+                <ul>
+                    <li>
+                        <h4>请且只能输入一个参数！</h4>
+                        <p>请按照错误提示解决。</p>
+                    </li>
+                    <li>
+                        <h4>请输入有效数字！</h4>
+                        <p>出现这个错误代表你输入的数据触发了 <code>ValueError</code> ，请检查你输入的数据是否可以转换为 <code>float</code>(单精度浮点数) 类。</p>
+                    </li>
+                </ul>
+                <hr />
+                <h3>长度单位转换</h3>
+                <ul>
+                    <li>
+                        <h4>请且只能输入一个参数！</h4>
+                        <p>请按照错误提示解决。</p>
+                    </li>
+                    <li>
+                        <h4>请输入有效数字！</h4>
+                        <p>出现这个错误代表你输入的数据触发了 <code>ValueError</code> ，请检查你输入的数据是否可以转换为 <code>float</code>(单精度浮点数) 类。</p>
+                    </li>
+                </ul>
+                <hr />
+                <h3>圆的参数计算</h3>
+                <ul>
+                    <li>
+                        <h4>请且只能输入一个参数！</h4>
+                        <p>请按照错误提示解决。</p>
+                    </li>
+                    <li>
+                        <h4>请输入有效数字！</h4>
+                        <p>出现这个错误代表你输入的数据触发了 <code>ValueError</code> ，请检查你输入的数据是否可以转换为 <code>float</code>(单精度浮点数) 类。</p>
+                    </li>
+                </ul>
+                <hr />
+                <h3>Nuitka批量打包</h3>
+                <ul>
+                    <li>
+                        <h4>✕ 指定的目录路径不存在，请重新运行程序并输入有效的目录路径。</h4>
+                        <p>请按照错误提示解决。</p>
+                    </li>
+                    <li>
+                        <h4>打包 <code>{file_path}</code> 时出错: <code>{e}</code></h4>
+                        <p>视具体的错误信息而定。可能是打包后的文件被杀软拦截了...如果不清楚可以<a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a></p>
+                    </li>
+                </ul>
+                <hr />
+                <h3>Pyinstaller批量打包</h3>
+                <ul>
+                    <li>
+                        <h4>✕ 指定的目录路径不存在，请重新运行程序并输入有效的目录路径。</h4>
+                        <p>请按照错误提示解决。</p>
+                    </li>
+                    <li>
+                        <h4>打包 <code>{file_path}</code> 时出错: <code>{e}</code></h4>
+                        <p>视具体的错误信息而定。可能是打包后的文件被杀软拦截了...如果不清楚可以<a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a></p>
+                    </li>
+                </ul>
+                <hr />
+                <h3>自动替换指定文本</h3>
+                <ul>
+                    <li>
+                        <h4>[ERROR] 指定的目录路径不存在，请重新运行程序并输入有效的目录路径。</h4>
+                        <p>请按照错误提示解决。</p>
+                    </li>
+                    <li>
+                        <h4>[ERROR]无法处理文件: <code>{file_path}</code> 因为: <code>{e}</code></h4>
+                        <p>视具体的错误信息而定。可能是权限不足，也可能是那个文件不是<code>utf-8</code>的...如果不清楚可以<a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a></p>
+                    </li>
+                </ul>
+                <hr />
+                <h3>hosts修改</h3>
+                <ul>
+                    <li>
+                        <h4>啊哦，输入的指令似乎不正确...再试试吧！</h4>
+                        <p>你输错了。</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container" style="margin-bottom: 1%; margin-right: 1%; margin-left: 1%;">
+            <div class="right-text">
+                <a href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/wiki/">回到索引</a>
+                <p>最后更新：<strong>2024/9/13</strong></p>
+                <a href="https://github.com/DuckDuckStudio/yazicbs.github.io/issues">[提交<strong>本页面</strong>的反馈]</a><br>
+                <a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues">[提交<strong>芙芙工具箱</strong>的反馈]</a><br>
+            </div>
+        </div>
+    </body>
+</html>

@@ -9,7 +9,7 @@ IGNORE_FILES = ['Duck Parkour.html'] # 忽略的文件
 IGNORE_URLS = [
     # 临时
     'https://duckduckstudio.github.io/yazicbs.github.io/zh_cn/js/Festivals.js',
-    'https://duckduckstudio.github.io/yazicbs.github.io/font/做根号的自己.png,'
+    'https://duckduckstudio.github.io/yazicbs.github.io/font/做根号的自己.png'
     # 常时
     'https://space.bilibili.com/2054654702/',
     'https://duckduckstudio.github.io/yazicbs.github.io/Interesting/sounds/*.mp3',

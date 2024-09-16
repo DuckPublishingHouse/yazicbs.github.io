@@ -9,6 +9,7 @@ IGNORE_FILES = ['Duck Parkour.html'] # 忽略的文件
 IGNORE_URLS = [
     # 临时
     'https://duckduckstudio.github.io/yazicbs.github.io/zh_cn/js/Festivals.js',
+    'https://duckduckstudio.github.io/yazicbs.github.io/font/%E5%81%9A%E6%A0%B9%E5%8F%B7%E7%9A%84%E8%87%AA%E5%B7%B1.png'
     'https://duckduckstudio.github.io/yazicbs.github.io/font/做根号的自己.png'
     # 常时
     'https://space.bilibili.com/2054654702/',
@@ -67,7 +68,7 @@ def check_files():
                     for url in urls:
                         status_code, status_message = check_link(url)
                         if status_message == 'ignored':
-                            continue
+                            print(f'\n[IGNORED] 文件: {relative_file_path} | 行号: {line_number} | 链接: {url} | 返回代码: {status_code}')
                         if status_code == 200:
                             print('*', end='')
                         else:

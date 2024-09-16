@@ -28,9 +28,6 @@ IGNORE_URLS = [
 URL_REGEX = re.compile(r'"https://[^\'"\n\r\s<>]*(?=[\'"])')
 
 def check_link(url):
-    url = url.strip('\'"') # 去除引号
-    if url.startswith(("'", '"')):
-        url = url[1:]
     if url in IGNORE_URLS:
         return 'Ignored URL', 'ignored'
     try:
@@ -66,10 +63,12 @@ def check_files():
                 for line_number, line in enumerate(f, start=1):
                     urls = URL_REGEX.findall(line)
                     for url in urls:
+                        if url.startswith(("'", '"')):
+                            url = url.strip('\'"') # 去除引号
                         status_code, status_message = check_link(url)
                         if status_message == 'ignored':
                             print(f'\n[IGNORED] 文件: {relative_file_path} | 行号: {line_number} | 链接: {url} | 返回代码: {status_code}')
-                        if status_code == 200:
+                        elif status_code == 200:
                             print('*', end='')
                         else:
                             if status_message == "pass":

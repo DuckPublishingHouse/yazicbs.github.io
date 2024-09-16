@@ -75,7 +75,7 @@ def check_files():
                                 print(f'\n[WARNING] 文件: {relative_file_path}, 行号: {line_number}, 链接: {url}, 返回代码: {status_code}')
                             elif status_message == "faild":
                                 print(f'\n[ERROR] 文件: {relative_file_path}, 行号: {line_number}, 链接: {url}, 返回代码: {status_code}')
-                                #sys.exit(1)
+                                sys.exit(1)
 
 if __name__ == '__main__':
     check_files()

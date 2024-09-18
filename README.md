@@ -37,12 +37,11 @@ Ciallo~ (∠・ω< )⌒☆
     <!-- 控制台猜数字简略版 by鸭鸭「カモ」 -->
     <script src="https://duckduckstudio.github.io/yazicbs.github.io/zh_cn/js/games/simplified/guess_number.js"></script>
     ```
-* 节日
-  * 新年控制台庆祝
-  ```html
-  <!-- 欢天喜地，过大年！ by鸭鸭「カモ」 -->
-  <script src="https://duckduckstudio.github.io/yazicbs.github.io/zh_cn/js/NewYear.js"></script>
-  ```
+* 节日  
+```html
+<!-- 节日庆祝 by鸭鸭「カモ」 -->
+<script src="https://duckduckstudio.github.io/yazicbs.github.io/zh_cn/js/Festivals.js"></script>
+```
 * 计算(离)寒暑假还剩多少秒 - [Demo](https://duckduckstudio.github.io/yazicbs.github.io/Interesting/vacation_countdown/)
 ```html
 <!-- (离)寒暑假还有多久 by鸭鸭「カモ」 -->

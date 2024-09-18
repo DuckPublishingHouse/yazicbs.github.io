@@ -5,11 +5,12 @@ import requests
 
 DIRECTORY = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # 指定要检查的目录为所在目录上级目录
 IGNORE_FOLDERS = ['music_games'] # 忽略的文件夹
-IGNORE_FILES = ['ignore_file.js', 'ignore_file.css', 'Duck Parkour.html'] # 忽略的文件
+IGNORE_FILES = ['Duck Parkour.html'] # 忽略的文件
 IGNORE_URLS = [
+    # 常时
     'https://space.bilibili.com/2054654702/',
+    'https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/wiki/error/',
     'https://duckduckstudio.github.io/yazicbs.github.io/Interesting/sounds/*.mp3',
-    'https://duckduckstudio.github.io/yazicbs.github.io/Interesting/sounds/*.mp3--,',
     'https://duckduckstudio.github.io/yazicbs.github.io/music_games/photos/show.png',
     'https://duckduckstudio.github.io/yazicbs.github.io/music_games/photos/Arcaea/[SongName]-SCORE-EXp-FR.png',
     'https://duckduckstudio.github.io/yazicbs.github.io/music_games/photos/GenshinImpact/[SongName]-SCORE-LEVER.png',
@@ -24,9 +25,6 @@ IGNORE_URLS = [
 URL_REGEX = re.compile(r'"https://[^\'"\n\r\s<>]*(?=[\'"])')
 
 def check_link(url):
-    url = url.strip('\'"') # 去除引号
-    if url.startswith(("'", '"')):
-        url = url[1:]
     if url in IGNORE_URLS:
         return 'Ignored URL', 'ignored'
     try:
@@ -62,16 +60,18 @@ def check_files():
                 for line_number, line in enumerate(f, start=1):
                     urls = URL_REGEX.findall(line)
                     for url in urls:
+                        if url.startswith(("'", '"')):
+                            url = url.strip('\'"') # 去除引号
                         status_code, status_message = check_link(url)
                         if status_message == 'ignored':
-                            continue
-                        if status_code == 200:
+                            print(f'\n[IGNORED] 文件: {relative_file_path} | 行号: {line_number} | 链接: {url} | 返回代码: {status_code}')
+                        elif status_code == 200:
                             print('*', end='')
                         else:
                             if status_message == "pass":
-                                print(f'\n[WARN] 文件: {relative_file_path}, 行号: {line_number}, 链接: {url}, 返回代码: {status_code}')
+                                print(f'\n[WARNING] 文件: {relative_file_path} | 行号: {line_number} | 链接: {url} | 返回代码: {status_code}')
                             elif status_message == "faild":
-                                print(f'\n[ERROR] 文件: {relative_file_path}, 行号: {line_number}, 链接: {url}, 返回代码: {status_code}')
+                                print(f'\n[ERROR] 文件: {relative_file_path} | 行号: {line_number} | 链接: {url} | 返回代码: {status_code}')
                                 sys.exit(1)
 
 if __name__ == '__main__':

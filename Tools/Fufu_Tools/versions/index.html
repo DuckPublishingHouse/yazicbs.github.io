@@ -76,60 +76,78 @@
 
             <div class="center-text">
                 <h1>版本说明</h1>
-                <i>目前有lite版、打包版、安装程序以及code版</i>
+                <i>目前有<a href="#lite版">lite版</a>、<a href="#打包版">打包版</a>、<a href="#安装程序">安装程序</a>、<a href="#源码">code版</a>以及<a href="#独立开发工具包">独立开发工具包</a></i>
                 <p>&nbsp;</p>
             </div>
 
-            <div class="container">
-                <h2>lite版<i>(zip)</i></h2>
-                <p>这是一个十分轻量级的版本，<strong>占用空间最少，运行速度最快，功能与其他版本相同</strong>，但<strong>必须先配置Python</strong>。</p>
-                <p>适用人群：</p>
+            <div class="container" id="lite版">
+                <h2>lite版<i>(zip/7z)</i></h2>
+                <p>这是一个十分轻量级的版本，<strong>占用空间最少，运行速度最快，功能与其他版本相同</strong>，但<strong>必须先配置依赖</strong>。</p>
+                <h3>适用人群：</h3>
                 <ul>
-                    <li><p>正确配置Python且<strong>Python版本高于3.7</strong>[1]的人</p></li>
-                    <li><p>需要解压即用的人</p></li>
-                </ul>
-                <p>[1] 关于芙芙工具箱的系统要求，请前往这个网站查看→<strong><a href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/minimum/" target="_blank">[芙芙工具箱最低系统要求]</a></strong></p>
-            </div>
-
-            <div class="container">
-                <h2>打包版<i>(zip)</i></h2>
-                <p>这是一个经过打包后的版本，<strong>占用空间较大，运行速度较慢，功能与其他版本相同</strong>，虽然有些许缺点，但你在使用这个版本时<strong>无需配置Python。</strong></p>
-                <p>适用人群：</p>
-                <ul>
-                    <li><p>不配置Python环境的人</p></li>
-                    <li><p>需要解压即用的人</p></li>
+                    <li><p>能正确配置依赖<sup><a href="#注释1">[1]</a></sup>的</p></li>
+                    <li><p>需要解压即用的</p></li>
                 </ul>
             </div>
 
-            <div class="container">
+            <div class="container" id="打包版">
+                <h2>打包版<i>(zip/7z)</i></h2>
+                <p>这是一个经过打包后的版本，<strong>占用空间较大，运行速度较慢，功能与其他版本相同</strong>，虽然有些许缺点，但你在使用这个版本时<strong>无需配置依赖。</strong></p>
+                <h3>适用人群：</h3>
+                <ul>
+                    <li><p>不配置依赖的</p></li>
+                    <li><p>需要解压即用的</p></li>
+                </ul>
+            </div>
+
+            <div class="container" id="安装程序">
                 <h2>安装程序<i>(exe)</i></h2>
-                <p>这是打包版的安装程序，与<i>打包版(zip)</i>不同的是这个版本<i>可以实现自动新建桌面图标等功能</i>，且<i>自带卸载工具</i>。<strong>占用空间较大，运行速度较慢，功能与其他版本相同</strong>，虽然有些许缺点，但你在使用这个版本时<strong>无需配置Python。</strong></p>
-                <p>适用人群：</p>
+                <p>这是打包版的安装程序，与<i>打包版(zip)</i>不同的是这个版本<i>可以实现自动新建桌面图标等功能</i>，且<i>自带卸载工具</i>。<strong>占用空间较大，运行速度较慢，功能与其他版本相同</strong>，虽然有些许缺点，但你在使用这个版本时<strong>无需配置依赖。</strong></p>
+                <h3>适用人群：</h3>
                 <ul>
-                    <li><p>需要卸载程序的人</p></li>
-                    <li><p>不配置Python环境的人</p></li>
+                    <li><p>需要卸载程序的</p></li>
+                    <li><p>不配置依赖的</p></li>
                 </ul>
             </div>
 
-            <div class="container">
-                <h2>code</h2>
-                <p>这个版本为代码仓库中的工具的版本。使用这个版本，你可以最先体验到已知BUG修复、全新工具等，但这个版本的程序未经验证，可能会出现一些很神奇的BUG。</p>
-                <p>适用人群：</p>
+            <div class="container" id="源码">
+                <h2>源码 / code版</h2>
+                <p>这个版本为代码仓库中的工具的版本。使用这个版本，你可以<strong>最先体验到已知BUG修复、全新工具等</strong>，但这个版本的程序<strong>未经验证</strong>，可能会出现一些很神奇的BUG。</p>
+                <h3>适用人群：</h3>
                 <ul>
-                    <li><p>想要体验到最新功能的人</p></li>
-                    <li><p>懂得查阅文档的人</p></li>
-                    <li><p>可以编译c++文件的人</p></li>
+                    <li><p>想要体验到最新功能的</p></li>
+                    <li><p>懂得查阅文档的</p></li>
+                    <li><p>能正确配置依赖<sup><a href="#注释1">[1]</a></sup>的</p></li>
                 </ul>
-                <p>如何获取：</p>
-                <p>如果您确实需要使用到这个版本，请在命令行中<code>cd</code>到一个空目录中，然后执行<code>git clone https://github.com/DuckDuckStudio/Fufu_Tools.git</code>即可获取仓库源码。</p>
+                <h3>如何获取：</h3>
+                <p>如果您确实需要使用到这个版本，请在命令行中<code>cd</code>到一个目录中，然后执行<code>git clone https://github.com/DuckDuckStudio/Fufu_Tools.git</code>即可获取仓库源码。</p>
                 <p>在获取完仓库源码后，请记得将仓库中的<code>cxx</code>文件进行编译！(我使用g++编译)</p>
+            </div>
+
+            <div class="container" id="独立开发工具包">
+                <h2>独立开发工具包</h2>
+                <p>这个版本为独立工具包仓库中的发行版。这个版本<strong>仅包含开发工具</strong>，同时提供预览版。</p>
+                <h3>适用人群：</h3>
+                <ul>
+                    <li><p>仅需开发工具的</p></li>
+                    <li><p>懂得查阅文档的</p></li>
+                </ul>
+                <h3>如何获取：</h3>
+                <p>请前往<a href="https://github.com/DuckDuckStudio/Fufu_Dev_Tools/releases/" target="_blank">仓库发行版</a>获取</p>
+            </div>
+
+            <br>
+
+            <div class="container" id="注释">
+                <h2>注释</h2>
+                <p id="注释1"><sup>[1]</sup> 关于芙芙工具箱的系统要求，请前往这个网站查看→<strong><a href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/minimum/" target="_blank">[芙芙工具箱最低系统要求]</a></strong></p>
             </div>
         </div>
 
         <div class="container" style="margin-bottom: 1%; margin-right: 1%; margin-left: 1%;">
             <div class="right-text">
                 <a href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/">回到首页</a>
-                <p>最后更新：<strong>2024/4/30</strong></p>
+                <p>最后更新：<strong>2024/9/16</strong></p>
                 <a href="https://github.com/DuckDuckStudio/yazicbs.github.io/issues" target="_blank">[提交<strong>本页面</strong>的反馈]</a><br>
                 <a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues" target="_blank">[提交<strong>芙芙工具箱</strong>的反馈]</a><br>
             </div>

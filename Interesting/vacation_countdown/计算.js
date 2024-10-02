@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(`%c[log] 当前时间: ${startDate}`, "color: cyan");
 
     // ----- 寒暑假日期，仅为大概 -----
-    const summer_vacation_start = new Date(startDate.getFullYear(), 7, 1);
-    const summer_vacation_end = new Date(startDate.getFullYear(), 8, 1);
+    const summer_vacation_start = new Date(startDate.getFullYear(), 8, 1);
+    const summer_vacation_end = new Date(startDate.getFullYear(), 10, 1);
     const winter_vacation_start = new Date(startDate.getFullYear(), 0, 20);
     const winter_vacation_end = new Date(startDate.getFullYear(), 1, 17);
     // ------------------------------

@@ -26,7 +26,7 @@ function gm(n) {
     console.log("[Game\\Guess Number] 太小了, 再猜看看?");
   } else if (n > numberToGuess) {
     console.log("[Game\\Guess Number] 太大了, 再猜看看?");
-  } else if (!Number.isInteger(n)) {
+  } else if (Number.isInteger(n)) {
     // NOTE:
     // Number.isNaN() 判断的是他是不是数字类型
     // MDN Docs: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN

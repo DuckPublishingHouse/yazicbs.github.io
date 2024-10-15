@@ -13,7 +13,9 @@ function gm_init(min, max) {
   guess_max = max;
   guess_min = min;
   gm_random_number = Math.floor(Math.random() * (max - min + 1)) + min;
-  console.log(`[Game\\Guess Number] 已成功初始化猜数字游戏 (Max:${guess_max} | Min:${guess_min})`)
+  if (!Number.isNaN(guess_max) && !Number.isNaN(guess_min)) { // 避免重复输出, 还是不懂去了自己试下就知道了
+    console.log(`[Game\\Guess Number] 已成功初始化猜数字游戏 (Max:${guess_max} | Min:${guess_min})`)
+  }
 }
 
 // 游戏函数 - 猜数字
@@ -34,7 +36,6 @@ function gm(n) {
     // Number.isInteger() 判断的是他是不是整数类型 (整型)
     // MDN Docs: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger
     //
-    // 不懂之前为什么会有个 Number.isNaN() 的判断，我这次调整为每次猜到都自动初始化下一局。
     // 用 console.log/warn/error 不好吗? 为什么在不需要返回的时候硬要 return
     gm_init(guess_max, guess_min);
     console.log("[Game\\Guess Number] 恭喜, 您猜对了！\n[Game\\Guess Number] 已自动初始化下一局游戏, 如需修改范围请重新使用 gm_init(最小数, 最大数) 初始化");

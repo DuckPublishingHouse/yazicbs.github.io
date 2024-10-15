@@ -40,7 +40,7 @@ function Guess_number(n) {
       // MDN Docs: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger
       //
       // 用 console.log/warn/error 不好吗? 为什么在不需要返回的时候硬要 return
-      gm_init(guess_max, guess_min);
+      Guess_number_init(guess_max, guess_min);
       console.log("[Game\\Guess Number] 恭喜, 您猜对了！\n[Game\\Guess Number] 已自动初始化下一局游戏, 如需修改范围请重新使用 gm_init(最小数, 最大数) 初始化");
     }
   } else {

@@ -15,7 +15,7 @@ function Guess_number_init(min, max) {
   guess_max = max;
   guess_min = min;
   Guess_number_random_number = Math.floor(Math.random() * (max - min + 1)) + min;
-  if (!Number.isNaN(guess_max) && !Number.isNaN(guess_min)) { // 避免重复输出, 还是不懂去了自己试下就知道了
+  if (Number.isNaN(guess_max) && Number.isNaN(guess_min)) { // 避免重复输出, 还是不懂去了自己试下就知道了
     console.log(`[Game\\Guess Number] 已成功初始化猜数字游戏 (Max:${guess_max} | Min:${guess_min})`)
   }
 }

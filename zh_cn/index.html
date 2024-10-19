@@ -34,6 +34,24 @@ a     a  h   a  c     a a           a  a   a   s  a    a  a  a    a
 aooaa    a  aa  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a
 -->
 
+<!-- Tencent/vConsole CDN -->
+<script defer>
+    // 获取当前网址的查询参数
+    var urlParams = new URLSearchParams(window.location.search);
+  
+    // 检查是否包含 `debug` 参数
+    if (urlParams.has('debug')) {
+        console.debug("[DEBUG] 引入vConsole...")
+        var script = document.createElement('script');
+        script.src = "https://unpkg.com/vconsole@latest/dist/vconsole.min.js";
+        script.onload = function() {
+            // VConsole 默认会挂载到 `window.VConsole` 上
+            var vConsole = new window.VConsole();
+        };
+        document.head.appendChild(script);
+    }
+</script>
+
 <!-- FUN JS by鸭鸭「カモ」 -->
 <script src="https://duckduckstudio.github.io/yazicbs.github.io/zh_cn/js/games/simplified/guess_number.js"></script>
 <script src="https://duckduckstudio.github.io/yazicbs.github.io/zh_cn/js/Festivals.js"></script>

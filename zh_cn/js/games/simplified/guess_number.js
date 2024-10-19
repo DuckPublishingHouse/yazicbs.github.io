@@ -1,6 +1,7 @@
 /* 
 * JS输出分类: 游戏-猜数字
 */
+
 var gm_random_number;
 var guess_max;
 var guess_min;

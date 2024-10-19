@@ -1,4 +1,4 @@
-# 鸭鸭工作室 | 鸭鸭「カモ」 的个人网站
+# 鸭鸭「カモ」 的个人网站
 
 [![pages-build-deployment](https://github.com/DuckDuckStudio/yazicbs.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/DuckDuckStudio/yazicbs.github.io/actions/workflows/pages/pages-build-deployment) | [![检查本地路径](https://github.com/DuckDuckStudio/yazicbs.github.io/actions/workflows/check-local-paths.yml/badge.svg)](https://github.com/DuckDuckStudio/yazicbs.github.io/actions/workflows/check-local-paths.yml) | [![检查链接有效性](https://github.com/DuckDuckStudio/yazicbs.github.io/actions/workflows/check_url_visit.yml/badge.svg)](https://github.com/DuckDuckStudio/yazicbs.github.io/actions/workflows/check_url_visit.yml)  
 

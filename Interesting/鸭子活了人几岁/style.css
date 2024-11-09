@@ -1,0 +1,17 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background-color: #eadbbf;
+}
+
+.container {
+    text-align: center;
+}
+
+#age {
+    font-size: 1200%;
+}

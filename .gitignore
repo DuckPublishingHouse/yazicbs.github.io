@@ -1,5 +1,4 @@
 .vs/
-test/
 # python
 .venv/
 # npm
@@ -10,3 +9,6 @@ package.json
 other/links/
 # Just for fun
 zh_cn/js/neofetch.js
+# TEST
+test/
+test.*

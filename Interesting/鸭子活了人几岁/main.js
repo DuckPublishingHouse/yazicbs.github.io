@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(`%c[log] 当前时间: ${当前时间}`, "color: cyan"); // 输出好看?
 
     const 鸭子出生 = new Date(2023, 11, 6); // 2023年12月5日
-    const 鸭子没嘎 = truea;
+    const 鸭子没嘎 = true;
 
     function 格式化岁数(岁数) {
         const 年 = Math.floor(岁数);

@@ -12,6 +12,8 @@ jobs:
 
     steps:
       - name: Add or remove label based on auto-merge state
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
           AUTO_MERGE_ENABLED=${{ github.event.pull_request.auto_merge_enabled }}

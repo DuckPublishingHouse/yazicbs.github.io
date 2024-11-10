@@ -1,0 +1,25 @@
+name: Handle Auto Merge Labels
+
+on:
+  pull_request:
+    types:
+      - auto_merge_enabled
+      - auto_merge_disabled
+
+jobs:
+  handle_auto_merge_labels:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add or remove label based on auto-merge state
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          AUTO_MERGE_ENABLED=${{ github.event.pull_request.auto_merge_enabled }}
+
+          if [ "$AUTO_MERGE_ENABLED" == "true" ]; then
+            echo "Auto-merge is enabled, adding 'auto-merge-enabled' label."
+            gh pr edit $PR_NUMBER --add-label "auto-merge-enabled"
+          else
+            echo "Auto-merge is disabled, removing 'auto-merge-enabled' label."
+            gh pr edit $PR_NUMBER --remove-label "auto-merge-enabled"
+          fi

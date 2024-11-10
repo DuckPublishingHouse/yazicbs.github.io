@@ -19,7 +19,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
-          AUTO_MERGE_ENABLED=${{ github.event.pull_request.auto_merge_enabled }}
+          AUTO_MERGE_ENABLED=$(gh pr view $PR_NUMBER --json autoMergeEnabled -q ".autoMergeEnabled")
 
           if [ "$AUTO_MERGE_ENABLED" == "true" ]; then
             echo "[INFO] 已启用自动合并, 正在添加 'DEV-已启用自动合并' 标签..."

@@ -91,6 +91,14 @@ https://space.bilibili.com/2054654702/
                 <h3>定时闹钟</h3>
                 <ul>
                     <li>
+                        <h4>✕ 提醒时间格式不正确</h4>
+                        <p>请检查你输入的时间是否为以下几种格式:</p>
+                        <ul>
+                            <li><b><code>时时:分分</code></b></li>
+                            <li><b><code>时时：分分</code></b></li>
+                        </ul>
+                    </li>
+                    <li>
                         <h4>✕ 未找到铃声文件或铃声文件不唯一</h4>
                         <p>请检查铃声文件目录 (程序所在目录下的<code>铃声文件</code>文件夹) 中是否<strong>有且只有一个 <code>mp3</code></strong>格式的铃声文件。</p>
                         <ul>
@@ -106,11 +114,15 @@ https://space.bilibili.com/2054654702/
                         </ul>
                     </li>
                     <li>
-                        <h4>FileNotFoundError: [WinError 3] 系统找不到指定的路径。: './铃声文件'</h4>
+                        <h4>✕ 无法查找铃声文件，请确认铃声文件文件夹是否存在</h4>
+                        <p><em>&gt; 在 <a href="https://github.com/DuckDuckStudio/Fufu_Tools/commit/4f9a289b316abe2228be9b8f2a86bc1993327b70" target="_blank">Commit 4f9a289</a> 前显示为 <b>FileNotFoundError: [WinError 3] 系统找不到指定的路径。: './铃声文件'</b></em></p>
                         <p>请检查铃声文件目录 (程序所在目录下的<code>铃声文件</code>文件夹) <strong>是否存在</strong>。</p>
                         <ul>
                             <li>存在
-                                <ul><li><a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a></li></ul>
+                                <ul>
+                                    <li>直接使用<code>python</code>命令执行且版本于 <a href="https://github.com/DuckDuckStudio/Fufu_Tools/commit/4f9a289b316abe2228be9b8f2a86bc1993327b70" target="_blank">Commit 4f9a289</a> 前的 → 请更新到最新版或手动<code>cd</code>到程序目录</li>
+                                    <li>版本于 <a href="https://github.com/DuckDuckStudio/Fufu_Tools/commit/4f9a289b316abe2228be9b8f2a86bc1993327b70" target="_blank">Commit 4f9a289</a> 后的 → <a href="https://github.com/DuckDuckStudio/Fufu_Tools/issues/" target="_blank">提交 Issue</a></li>
+                                </ul>
                             </li>
                             <li>不存在
                                 <ul><li>新建一个</li></ul>

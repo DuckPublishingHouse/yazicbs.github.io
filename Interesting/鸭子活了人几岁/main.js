@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function 更新岁数() {
         const 现在 = new Date();
-        let 岁数 = ["嘎了",""];
+        let 岁数 = ["🦆嘎了🦆",""];
         let 活了多久;
 
         // 鸭子活 8 年

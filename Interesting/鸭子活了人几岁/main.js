@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 每秒更新一次
-    setInterval(更新岁数, 1000);
+    // 每0.01鸭日(144s)更新一次
+    setInterval(更新岁数, 144);
 
     // 初次调用以显示时间
     更新岁数();

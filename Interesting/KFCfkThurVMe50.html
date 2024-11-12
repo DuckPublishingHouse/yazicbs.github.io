@@ -1,25 +1,26 @@
-<!DOCTYPE html>  
-<html lang="zh">  
-<head>  
-    <title>正在为你随机跳转~请稍后~</title>
-	<!-- 芙芙工具箱网页通用样式 by鸭鸭「カモ」 -->
-	<link rel="stylesheet" href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/css/universal.css">
-</head>  
-<body>  
-    <script>  
-        // Get 当前 day  
-        let currentDate = new Date();  
-        let dayOfWeek = currentDate.getDay(); // 返回一周中的第几天，周日->0，周一->1...  
-		//---
-        if (Math.random() > 0.5) {
-			window.location.href = 'https://www.cnhls.com/';//%50几率跳转华莱士官网(周四亦如此)
-		} else {//没随机到时
-			if (dayOfWeek === 4) {//if 今日fk星期四
-				window.location.href = 'http://www.kfc.com.cn/kfccda/index.aspx';//KFC!
-			} else {
-				window.location.href = 'https://www.mcdonalds.com.cn/';//MDL!
-			}
-		} 
-    </script>  
-</body>  
+<!DOCTYPE html>
+
+<html lang="zh">
+    <head>
+        <title>正在为你随机跳转~ 请稍后~</title>
+        <!-- 芙芙工具箱网页通用样式 by鸭鸭「カモ」 -->
+        <link rel="stylesheet" href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/css/universal.css">
+    </head>
+    <body>
+        <script>
+            // Get 当前 day
+            let currentDate = new Date();
+            let dayOfWeek = currentDate.getDay(); // 返回一周中的第几天，周日->0，周一->1...
+            //---
+            if (Math.random() > 0.5) {
+                window.location.href = 'https://www.cnhls.com/';//%50几率跳转华莱士官网(周四亦如此)
+            } else {//没随机到时
+                if (dayOfWeek === 4) {//if 今日fk星期四
+                    window.location.href = 'http://www.kfc.com.cn/kfccda/index.aspx';//KFC!
+                } else {
+                    window.location.href = 'https://www.mcdonalds.com.cn/';//MDL!
+                }
+            }
+        </script>
+    </body>
 </html>

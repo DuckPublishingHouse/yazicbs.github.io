@@ -38,4 +38,4 @@ body:
       label: 对于实施该功能的方法的建议
       placeholder: 建议我们如何实现这一点
     validations:
-      required: true
+      required: false

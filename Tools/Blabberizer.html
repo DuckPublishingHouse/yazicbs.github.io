@@ -1,155 +1,156 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <title>废话生成器</title>
-    <style>
-        a {
-            color: #007bff; /* 设置链接文字颜色 */
-            padding: 3px 5px; /* 设置内边距 */
-        }
-
-        a:hover {
-            color: #0056b3; /* 悬停时改变文字颜色 */
-            background-color: #e9ecef; /* 悬停时改变背景色 */
-        }
-        
-        h1 {
-            text-align: center;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 50px;
-        }
-
-        .button-container {
-            margin-top: 20px;
-        }
-
-        /* CSS Reset */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5dc;  /* 将背景颜色修改为米色调 */
-            color: #333;
-            line-height: 1.5;
-        }
-
-        /* 标题样式 */
-        h1 {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 2.5em;
-            font-weight: normal;
-        }
-
-        /* 生成按钮样式 */
-        #generateButton {
-            background-color: #3498db; /* 将按钮的背景颜色修改为淡蓝色 */
-            border: none;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 1em;
-        }
-
-        #generateButton:hover,
-        #generateButton:active {
-        background-color: #2980b9; /* 鼠标悬停时将按钮背景色修改为深蓝色 */
-        }
-
-        /* 结果文本样式 */
-        #result {
-            margin-top: 20px;
-            font-size: 1.2em;
-            text-align: center;
-        }
-
-        /* "回到首页"按钮样式 */
-        #back-to-home {
-            position: fixed; /* 将按钮设置为固定定位 */
-            bottom: 10px; /* 距离底部的距离 */
-            right: 10px; /* 距离右边的距离 */
-            background-color: #76828f;
-            color: #fff;
-            padding: 1.25px 2.5px;
-            font-size: 0.2em;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        #back-to-home:hover {
-            background-color: #555;
-        }
-    </style>
-    <a id="back-to-home" href="https://duckduckstudio.github.io/yazicbs.github.io/">回到首页</a>
-    <script defer>
-    (function() {
-        const generator = {
-            nouns: ['公司', '部门', '团队', '领导', '同事', '客户', '产品', '方案', '市场', '行业', '竞争对手', '合作伙伴'],
-            verbs: ['需要', '要求', '期望', '希望', '建议', '推荐', '提醒', '关注', '优化', '调整', '改进', '研究', '探索'],
-            adjectives: ['更', '更加', '更为', '更加地', '更为明显地', '更为显著地', '更为重要地', '更为必要地', '更为关键地', '更为紧迫地', '更好地', '更高效地', '更具竞争力地'],
-            nouns2: ['创新', '效率', '品质', '服务', '营销', '管理', '协作', '沟通', '学习', '发展', '解决方案', '市场策略', '团队合作'],
-            memes: ['996', '加班狂魔', '2333', '打酱油', '全力以赴', '666', '放飞自我', '扎心了老铁', '弯弯的月亮', '囧rz', '不忘初心', '一言难尽', '装逼', '作死', '划水', '中二病', '吃土', '逆向思维', '躺平', '原神,启动！'],
-
-            //specialSentences: {
-            //    '01-01': '新的一年，让我们更加奋发努力，创造更多辉煌的业绩！',
-            //    '04-01': '突然来了条信息！哦是废话，那没事了。',
-            //},
-
-            generate: function() {
-                let sentence;
-                const currentDate = new Date();
-                const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-                const day = String(currentDate.getDate()).padStart(2, '0');
-                const currentDateString = month + '-' + day;
-
-                //if (currentDateString in this.specialSentences) {
-                //    sentence = this.specialSentences[currentDateString];
-                //} else {
-                    sentence = this.randomItem(this.nouns)
-                        + this.randomItem(this.verbs)
-                        + this.randomItem(this.adjectives)
-                        + this.randomItem(this.nouns2);
-                //}
-
-                document.getElementById('result').textContent = sentence;
-            },
-
-            randomItem: function(array) {
-                return array[Math.floor(Math.random() * array.length)];
+    <head>
+        <meta charset="UTF-8">
+        <title>废话生成器</title>
+        <style>
+            a {
+                color: #007bff; /* 设置链接文字颜色 */
+                padding: 3px 5px; /* 设置内边距 */
             }
-        };
 
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('generateButton').addEventListener('click', function() {
-                generator.generate();
+            a:hover {
+                color: #0056b3; /* 悬停时改变文字颜色 */
+                background-color: #e9ecef; /* 悬停时改变背景色 */
+            }
+            
+            h1 {
+                text-align: center;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 50px;
+            }
+
+            .button-container {
+                margin-top: 20px;
+            }
+
+            /* CSS Reset */
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            html, body {
+                height: 100%;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f5f5dc;  /* 将背景颜色修改为米色调 */
+                color: #333;
+                line-height: 1.5;
+            }
+
+            /* 标题样式 */
+            h1 {
+                text-align: center;
+                margin-top: 30px;
+                font-size: 2.5em;
+                font-weight: normal;
+            }
+
+            /* 生成按钮样式 */
+            #generateButton {
+                background-color: #3498db; /* 将按钮的背景颜色修改为淡蓝色 */
+                border: none;
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-size: 1.2em;
+                cursor: pointer;
+                transition: all 0.2s;
+                font-size: 1em;
+            }
+
+            #generateButton:hover,
+            #generateButton:active {
+            background-color: #2980b9; /* 鼠标悬停时将按钮背景色修改为深蓝色 */
+            }
+
+            /* 结果文本样式 */
+            #result {
+                margin-top: 20px;
+                font-size: 1.2em;
+                text-align: center;
+            }
+
+            /* "回到首页"按钮样式 */
+            #back-to-home {
+                position: fixed; /* 将按钮设置为固定定位 */
+                bottom: 10px; /* 距离底部的距离 */
+                right: 10px; /* 距离右边的距离 */
+                background-color: #76828f;
+                color: #fff;
+                padding: 1.25px 2.5px;
+                font-size: 0.2em;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+
+            #back-to-home:hover {
+                background-color: #555;
+            }
+        </style>
+        <a id="back-to-home" href="https://duckduckstudio.github.io/yazicbs.github.io/">回到首页</a>
+        <script defer>
+        (function() {
+            const generator = {
+                nouns: ['公司', '部门', '团队', '领导', '同事', '客户', '产品', '方案', '市场', '行业', '竞争对手', '合作伙伴'],
+                verbs: ['需要', '要求', '期望', '希望', '建议', '推荐', '提醒', '关注', '优化', '调整', '改进', '研究', '探索'],
+                adjectives: ['更', '更加', '更为', '更加地', '更为明显地', '更为显著地', '更为重要地', '更为必要地', '更为关键地', '更为紧迫地', '更好地', '更高效地', '更具竞争力地'],
+                nouns2: ['创新', '效率', '品质', '服务', '营销', '管理', '协作', '沟通', '学习', '发展', '解决方案', '市场策略', '团队合作'],
+                memes: ['996', '加班狂魔', '2333', '打酱油', '全力以赴', '666', '放飞自我', '扎心了老铁', '弯弯的月亮', '囧rz', '不忘初心', '一言难尽', '装逼', '作死', '划水', '中二病', '吃土', '逆向思维', '躺平', '原神,启动！'],
+
+                //specialSentences: {
+                //    '01-01': '新的一年，让我们更加奋发努力，创造更多辉煌的业绩！',
+                //    '04-01': '突然来了条信息！哦是废话，那没事了。',
+                //},
+
+                generate: function() {
+                    let sentence;
+                    const currentDate = new Date();
+                    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+                    const day = String(currentDate.getDate()).padStart(2, '0');
+                    const currentDateString = month + '-' + day;
+
+                    //if (currentDateString in this.specialSentences) {
+                    //    sentence = this.specialSentences[currentDateString];
+                    //} else {
+                        sentence = this.randomItem(this.nouns)
+                            + this.randomItem(this.verbs)
+                            + this.randomItem(this.adjectives)
+                            + this.randomItem(this.nouns2);
+                    //}
+
+                    document.getElementById('result').textContent = sentence;
+                },
+
+                randomItem: function(array) {
+                    return array[Math.floor(Math.random() * array.length)];
+                }
+            };
+
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('generateButton').addEventListener('click', function() {
+                    generator.generate();
+                });
             });
-        });
-    })();
-    </script>
-</head>
-<body>
-    <div class="container">
-        <h1>废话生成器</h1>
-        <p>点击下面的按钮生成一段废话：</p>
-        <button id="generateButton">生成废话</button>
-        <p id="result"></p>
-    </div>
-</body>
+        })();
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>废话生成器</h1>
+            <p>点击下面的按钮生成一段废话：</p>
+            <button id="generateButton">生成废话</button>
+            <p id="result"></p>
+        </div>
+    </body>
 </html>

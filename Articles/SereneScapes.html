@@ -1,76 +1,81 @@
 <!DOCTYPE html>
+
 <html lang="zh">
-<!--©DuckStudio（包括句子） / 鸭鸭「カモ」-->
-<head>
-  <title>随机句子展示</title>
-  <link rel="icon" type="image/png" href="https://duckduckstudio.github.io/yazicbs.github.io/icos/articlesxico.png">
-  <style>
-    body {
-      background-color: #85c1ea;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    
-    .container {
-      background-image: linear-gradient(135deg, #00b0ff, #6f00ff);
-      color: #fff;
-      border-radius: 20px;
-      padding: 20px;
-      font-size: 24px;
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative; /* 添加相对定位 */
-    }
+    <head>
+        <title>随机句子展示</title>
+        <link rel="icon" type="image/png" href="https://duckduckstudio.github.io/yazicbs.github.io/icos/articlesxico.png">
+        <style>
+            body {
+                background-color: #85c1ea;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
 
-    /* "回到首页"按钮样式 */
-    #back-to-home {
-      position: fixed; /* 将按钮设置为固定定位 */
-      bottom: 20px; /* 距离底部的距离 */
-      right: 20px; /* 距离右边的距离 */
-      background-color: #76828f;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    
-    #back-to-home:hover {
-      background-color: #555;
-    }
-  </style>
-  <!-- 芙芙工具箱网页通用样式 by鸭鸭「カモ」 -->
-  <link rel="stylesheet" href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/css/universal.css">
-</head>
-<body>
-  <div class="container">
-    <p id="random-sentence"></p>
-  </div>
+            .container {
+                background-image: linear-gradient(135deg, #00b0ff, #6f00ff);
+                color: #fff;
+                border-radius: 20px;
+                padding: 20px;
+                font-size: 24px;
+                max-width: 800px;
+                margin: 0 auto;
+                position: relative;
+                /* 添加相对定位 */
+            }
 
-  <a id="back-to-home" href="https://duckduckstudio.github.io/yazicbs.github.io/">回到首页</a>
+            /* "回到首页"按钮样式 */
+            #back-to-home {
+                position: fixed;
+                /* 将按钮设置为固定定位 */
+                bottom: 20px;
+                /* 距离底部的距离 */
+                right: 20px;
+                /* 距离右边的距离 */
+                background-color: #76828f;
+                color: #fff;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+            }
 
-  <script>
-    const sentences = [
-      "城市像是一座巨大的舞台，吸引着各行各业的人们在其上演绎着自己的生命故事，高耸入云的建筑如同装饰品一般点缀在城市的地平线上，闪耀着现代文明的光芒，而城市中熙熙攘攘的人流和车流仿佛是城市生命的血液，源源不断地为城市注入着新的活力。",
-      "在黄昏时分，太阳的余晖染红了整个天空，倾斜的阳光洒在满地金黄的麦田之上，微风轻拂着麦穗摇曳生姿，似乎是大地与天空的相遇，呈现出一幅宁静而温暖的田园画卷。",
-      "在远离城市喧嚣的深山中，翠绿的树木争相生长，阳光透过树叶的缝隙洒在湛蓝的溪水上，微风轻轻拂过，带来一阵清凉与宁静，仿佛置身于世外桃源，让人沉浸在大自然的怀抱中。",
-      "人性如同一面镜子，能够反映出无尽的可能性和复杂的情感，同时也映照出我们内心的光明与黑暗，提醒我们时刻保持善良与智慧的选择。",
-      "城市如同快节奏的交响乐，充满了商业繁荣和现代化的气息；而乡村则像一首悠扬的民谣，静谧自然中藏着宁静和纯粹的美好。",
-      "翠绿的田野延绵至远方，村舍散落其中，悠闲的农人正在田间劳作，清晨的鸟鸣和晚上的虫鸣交织成一曲恬静的乡村乐章，让人心灵得到慰藉，仿佛回到了最纯粹、最宁静的生活状态。",
-      "深夜，城市如梦似幻。街灯下的影子孤寂而迷离，街道上只有微弱的车流声和脚步声回响，空气中弥漫着一种神秘的氛围。建筑物被暗夜的面纱覆盖，星光洒在天空，犹如璀璨的宝石点缀黑色的布幕。在这寂静的时刻，夜晚显现出它独特的魅力与未知的奥秘。"
-    ];
+            #back-to-home:hover {
+                background-color: #555;
+            }
+        </style>
+        <!-- 芙芙工具箱网页通用样式 by鸭鸭「カモ」 -->
+        <link rel="stylesheet" href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/css/universal.css">
+    </head>
 
-    const currentDate = new Date();
-    const currentDay = currentDate.getDate();
+    <body>
+        <div class="container">
+            <p id="random-sentence"></p>
+        </div>
 
-    const randomIndex = currentDay % sentences.length;
+        <a id="back-to-home" href="https://duckduckstudio.github.io/yazicbs.github.io/">回到首页</a>
 
-    const randomSentenceElement = document.getElementById("random-sentence");
-    randomSentenceElement.textContent = sentences[randomIndex];
+        <script>
+            const sentences = [
+                "城市像是一座巨大的舞台，吸引着各行各业的人们在其上演绎着自己的生命故事，高耸入云的建筑如同装饰品一般点缀在城市的地平线上，闪耀着现代文明的光芒，而城市中熙熙攘攘的人流和车流仿佛是城市生命的血液，源源不断地为城市注入着新的活力。",
+                "在黄昏时分，太阳的余晖染红了整个天空，倾斜的阳光洒在满地金黄的麦田之上，微风轻拂着麦穗摇曳生姿，似乎是大地与天空的相遇，呈现出一幅宁静而温暖的田园画卷。",
+                "在远离城市喧嚣的深山中，翠绿的树木争相生长，阳光透过树叶的缝隙洒在湛蓝的溪水上，微风轻轻拂过，带来一阵清凉与宁静，仿佛置身于世外桃源，让人沉浸在大自然的怀抱中。",
+                "人性如同一面镜子，能够反映出无尽的可能性和复杂的情感，同时也映照出我们内心的光明与黑暗，提醒我们时刻保持善良与智慧的选择。",
+                "城市如同快节奏的交响乐，充满了商业繁荣和现代化的气息；而乡村则像一首悠扬的民谣，静谧自然中藏着宁静和纯粹的美好。",
+                "翠绿的田野延绵至远方，村舍散落其中，悠闲的农人正在田间劳作，清晨的鸟鸣和晚上的虫鸣交织成一曲恬静的乡村乐章，让人心灵得到慰藉，仿佛回到了最纯粹、最宁静的生活状态。",
+                "深夜，城市如梦似幻。街灯下的影子孤寂而迷离，街道上只有微弱的车流声和脚步声回响，空气中弥漫着一种神秘的氛围。建筑物被暗夜的面纱覆盖，星光洒在天空，犹如璀璨的宝石点缀黑色的布幕。在这寂静的时刻，夜晚显现出它独特的魅力与未知的奥秘。"
+            ];
 
-    console.log("今天随机到第 " + randomSentenceElement + " 句");
-  </script>
-</body>
+            const currentDate = new Date();
+            const currentDay = currentDate.getDate();
+
+            const randomIndex = currentDay % sentences.length;
+
+            const randomSentenceElement = document.getElementById("random-sentence");
+            randomSentenceElement.textContent = sentences[randomIndex];
+
+            console.log("今天随机到第 " + randomSentenceElement + " 句");
+        </script>
+    </body>
 </html>

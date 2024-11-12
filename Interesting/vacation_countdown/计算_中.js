@@ -2,22 +2,23 @@
 /*       中文变量版        */
 /*========================*/
 
+// 前面不要加空格
 console.log(`
-    aaaad                 a         oaaa                   a  a
-    a     a          vav  a   a     a      a            hh a       bg
-    a     a  h   a  a     a a        aad  aaa  a   u  a    a  a  a    a
-    a     a  h   a  c     a a           a  a   a   s  a    a  a  a    a
-    aooaa    a a a  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a
+ddddd                 k         ssss                   d  i
+d     d         c c c k   k     s      t            dddd      oooo
+d     d  u   u  a     k k        sss  ttt  u   u  d    d  i  o    o
+d     d  u   u  c     k k           s  t   u   u  d    d  i  o    o
+ddddd    u u u  c c c k   k     sssss  t   u u u   ddddd  i   oooo
 
-    本站维护人员：
-    鸭鸭「カモ」
+本站维护人员：
+鸭鸭「カモ」
+欢迎关注我的bilibili频道：@鸭鸭_カモ
+https://space.bilibili.com/2054654702/
+回到主页：https://duckduckstudio.github.io/yazicbs.github.io/
 
-    ========================
-           中文变量版        
-    ========================
-
-    欢迎关注我们的bilibili频道：@鸭鸭_カモ
-    https://space.bilibili.com/2054654702/
+========================
+        中文变量版        
+========================
 `)
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(`%c[log] 当前时间: ${当前时间}`, "color: cyan");
 
     // ----- 寒暑假日期，仅为大概 -----
-    const 暑假开始 = new Date(当前时间.getFullYear(), 7, 1);
-    const 暑假结束 = new Date(当前时间.getFullYear(), 8, 1);
+    const 暑假开始 = new Date(当前时间.getFullYear(), 8, 1);
+    const 暑假结束 = new Date(当前时间.getFullYear(), 10, 1);
     const 寒假开始 = new Date(当前时间.getFullYear(), 0, 20);
     const 寒假结束 = new Date(当前时间.getFullYear(), 1, 17);
     // ------------------------------

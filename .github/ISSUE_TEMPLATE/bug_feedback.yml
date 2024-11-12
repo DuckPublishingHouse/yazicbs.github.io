@@ -44,13 +44,13 @@ body:
       label: 实际行为
       placeholder: 你遇到的情况是什么样的
     validations:
-      required: true
+      required: false
   - type: textarea
     attributes:
       label: 预期行为
       placeholder: 正常情况下应该是什么样的
     validations:
-      required: true
+      required: false
   - type: textarea
     attributes:
       label: 确认相关信息

@@ -1,0 +1,52 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background-color: #eadbbf;
+}
+
+.container {
+    text-align: center;
+}
+
+/* For PC */
+
+#age {
+    font-size: 1200%;
+}
+
+#day {
+    font-size: 300%;
+}
+
+/* 按钮样式 */
+.toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background-color: #45a049;
+}
+
+/* For Phone */
+@media (max-width: 900px) {
+    #age {
+        font-size: 400%;
+    }
+    
+    #day {
+        font-size: 200%;
+    }
+}

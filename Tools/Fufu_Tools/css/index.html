@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!-- Code by Duck Studio -->
-<!-- ©鸭鸭「カモ」 (包括图片) -->
-<!-- 模板流，启动！ -->
+
 <html lang="zh">
     <head>
         <title>芙芙工具箱 | 通用样式文档</title>
@@ -15,18 +14,19 @@
         <meta content="鸭鸭工作室,鸭鸭「カモ」,DuckStudio,DuckDuckStudio,Fufu_Tools,芙芙工具箱,css,样式,通用" name="keywords">
         <!--定义与网页相关的关键词-->
         <script>
+            // 前面不要加空格
             console.log(`
-                aaaad                 a         oaaa                   a  a             
-                a     a          vav  a   a     a      a            hh a       bg       
-                a     a  h   a  a     a a        aad  aaa  a   u  a    a  a  a    a     
-                a     a  h   a  c     a a           a  a   a   s  a    a  a  a    a     
-                aooaa    a a a  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a      
-              
-                本站维护人员：
-                鸭鸭「カモ」
-                欢迎关注我们的bilibili频道：@鸭鸭_カモ
-                https://space.bilibili.com/2054654702/
-                回到主页：https://duckduckstudio.github.io/yazicbs.github.io/
+ddddd                 k         ssss                   d  i
+d     d         c c c k   k     s      t            dddd      oooo
+d     d  u   u  a     k k        sss  ttt  u   u  d    d  i  o    o
+d     d  u   u  c     k k           s  t   u   u  d    d  i  o    o
+ddddd    u u u  c c c k   k     sssss  t   u u u   ddddd  i   oooo
+
+本站维护人员：
+鸭鸭「カモ」
+欢迎关注我的bilibili频道：@鸭鸭_カモ
+https://space.bilibili.com/2054654702/
+回到主页：https://duckduckstudio.github.io/yazicbs.github.io/
             `)
         </script>
         <style>
@@ -65,43 +65,13 @@
             }
 
             /* 避免文本超出屏幕 */
-            p {
-                max-width: 100%;
-            }
-
-            i {
+            p,i,img {
                 max-width: 100%;
             }
             
             img {
-                max-width: 100%;
                 height: auto;
             }
-
-            /* --- [实验性]折叠与展开 --- */
-            .collapse-content {
-                display: none;
-            }
-            
-            .toggle-btn::after {
-                display: inline-block;
-                margin-left: 5px;
-            }
-            /*
-                折叠样式使用说明:
-                请在需要折叠的地方的前面添加上如下代码，已确保有按钮可以控制是否折叠。
-                <button onclick="toggleContent(n)" class="toggle-btn expanded"><span id="tc-span1">点我展开内容</span></button>
-                将(n)替换为对应的数，例如:
-                <button onclick="toggleContent(1)" class="toggle-btn expanded"><span id="tc-span1">点我折叠内容</span></button>
-                Note:请注意默认文本，默认折叠时是“点我展开内容”，反之是“点我折叠内容”
-                    对应的默认状态请在代码末尾的JS脚本中设置。
-                
-                对于要折叠的元素，请使用如下代码框起来，并确保与按钮对应: (这里假设与按钮1对应)
-                <div id="content1" class="collapse-content">
-                    <p>需要折叠的内容</p>
-                </div>
-            */
-            /* ------ */
         </style>
         <!-- 芙芙工具箱网页通用样式 by鸭鸭「カモ」 -->
         <link rel="stylesheet" href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/css/universal.css">
@@ -125,7 +95,6 @@
                 </code>
             </pre>
             <p>其他版本请见<a href="https://github.com/DuckDuckStudio/yazicbs.github.io/tree/main/Tools/Fufu_Tools/css/" target="_blank">这个网页</a></p>
-            <!-- 折叠 样例 Start-->
         </div>
 
         <div class="container" style="margin-right: 30px; margin-left: 30px;">
@@ -140,32 +109,8 @@
             <div class="right-text">
                 <a href="https://duckduckstudio.github.io/yazicbs.github.io/">作者主页</a>
                 <a href="https://github.com/DuckDuckStudio/yazicbs.github.io/issues">提交反馈</a><br>
-                <p>2024年6月22日</p>
+                <p>2024年10月25日</p>
             </div>
         </div>
-
-        <script>
-            function toggleContent(id) {
-                var content = document.getElementById('content' + id);
-                var btn = document.getElementsByClassName('toggle-btn')[id - 1];
-                if (content.style.display === 'none') {
-                    content.style.display = 'block';
-                    btn.classList.add('expanded');
-                    const tcSpan = document.getElementById('tc-span' + id);
-                    tcSpan.textContent = "点我折叠内容";
-                } else {
-                    content.style.display = 'none';
-                    btn.classList.remove('expanded');
-                    const tcSpan = document.getElementById('tc-span' + id);
-                    tcSpan.textContent = "点我展开内容";
-                }
-            }
-        
-            // 设置默认状态
-            /*
-            document.getElementById('content1').style.display = 'block';
-            document.getElementById('content1').classList.add('expanded');//默认展开的要加
-            */
-        </script>
     </body>
 </html>

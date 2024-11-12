@@ -1,131 +1,150 @@
 <!DOCTYPE html>
+
 <html lang="zh">
-<head>
-  <meta charset="UTF-8">
-  <title>夜晚编码之乐 | 鸭鸭「カモ」的作文</title>
-  <link rel="icon" type="image/png" href="https://duckduckstudio.github.io/yazicbs.github.io/icos/articlesxico.png">
-  <style>
-    body {
-      position: relative;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      font-size: 25px;
-      line-height: 1.5;
-      color: #ffffff;/* 文本颜色 */
-      background-color: #7333d389;/* 页面背景色 */
-      padding: 40px;
-    }
+    <head>
+        <meta charset="UTF-8">
+        <title>夜晚编码之乐 | 鸭鸭「カモ」的作文</title>
+        <link rel="icon" type="image/png" href="https://duckduckstudio.github.io/yazicbs.github.io/icos/articlesxico.png">
+        <style>
+            body {
+                position: relative;
+                text-align: center;
+                font-family: Arial, sans-serif;
+                font-size: 25px;
+                line-height: 1.5;
+                color: #ffffff;
+                /* 文本颜色 */
+                background-color: #7333d389;
+                /* 页面背景色 */
+                padding: 40px;
+            }
 
-    h1 {
-      margin-top: 20px;
-      font-size: 50px;
-      font-weight: bold;
-      padding: 10px;
-      text-align: center;
-    }
+            h1 {
+                margin-top: 20px;
+                font-size: 50px;
+                font-weight: bold;
+                padding: 10px;
+                text-align: center;
+            }
 
-    p {
-      margin-bottom: 25px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0 20px;
-      text-indent: 2em;
-      text-align: left;
-    }
+            p {
+                margin-bottom: 25px;
+                max-width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0 20px;
+                text-indent: 2em;
+                text-align: left;
+            }
 
-    .author {
-      text-align: right;
-      font-size: 25px;
-      max-width: 1100px;
-      margin-top: 40px;
-      margin-bottom: 20px;
-      padding: 20px;
-    }
+            .author {
+                text-align: right;
+                font-size: 25px;
+                max-width: 1100px;
+                margin-top: 40px;
+                margin-bottom: 20px;
+                padding: 20px;
+            }
 
-    /* 添加亚克力效果的样式 */
-    .overlay {
-      background: #9166d1b5;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      border-radius: 10px;
-      text-align: left;
-      padding: 20px;
-    }
-    
-    .back-to-home {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: rgba(255, 255, 255, 0.8); 
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      padding: 10px 20px;
-      font-size: 16px;
-      color: #333;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-    
-    .back-to-home:hover {
-      background-color: rgba(255, 255, 255, 1); 
-    }
-    
-    .back-to-top {
-      position: fixed;
-      top: 600px; /* 按钮与顶部的距离 */
-      right: 30px;
-      background-color: rgba(255, 255, 255, 0.8); 
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      padding: 10px 15px; 
-      font-size: 20px; 
-      color: #333;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-    
-    .back-to-top:hover {
-      background-color: rgba(255, 255, 255, 1); 
-    }
-  </style>
-  <!-- 芙芙工具箱网页通用样式 by鸭鸭「カモ」 -->
-  <link rel="stylesheet" href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/css/universal.css">
-  <script>
-    window.addEventListener('scroll', function() {
-      var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-      var backToTopButton = document.querySelector('.back-to-top');
+            /* 添加亚克力效果的样式 */
+            .overlay {
+                background: #9166d1b5;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                text-align: left;
+                padding: 20px;
+            }
 
-      if (scrollPosition > 0) {
-        backToTopButton.style.display = 'block';
-      } else {
-        backToTopButton.style.display = 'none';
-      }
-    });
-  </script>
-</head>
-<body>
-  
-  <div class="overlay">
+            .back-to-home {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                background-color: rgba(255, 255, 255, 0.8);
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                padding: 10px 20px;
+                font-size: 16px;
+                color: #333;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+            }
 
-    <!--正文-->
-    <h1>夜晚编码之乐</h1>
-    <p>我喜欢在夜晚独自坐在电脑前编写代码的时光。这是一段有趣又富有挑战的时光，给我带来了思考和创造的乐趣。夜晚给予了我一个独处且专注的机会，让我可以尽情地沉浸于代码的世界中。</p>
-    <p>当深夜来临，城市的喧嚣逐渐安静下来，我把自己关在房间里，只剩下桌上电脑屏幕和台灯散发的柔和的光芒。这时，思路变得清晰，内心也变得平静，仿佛进入了一个只有我一个人的世界中。</p>
-    <p>我开始思考那些在白天受打扰而被搁置的问题。在夜晚，我可以全身心地投入到代码的编写中。代码从我的思维中流淌而出，每一行的编写都是一次思维的延伸。我逐渐沉浸其中，忘记了时间的流逝。</p>
-    <p>每当遇到难题，我都喜欢静下心来，一点一点地分析和解决问题。这不仅是技术上的挑战，更是一种思考的过程。在这个过程中，我学会了耐心和坚持，去寻找“最优解”。</p>
-    <p>独自写代码的时候，我可以自由地追求创造力和灵感，也可以在我的代码中写一些比较抽象的代码。</p>
-    <p>夜晚的静谧给予了我一个安静的环境，让我可以尽情地思考和构想。我可以尝试各种方法和思路，探索不同的可能性。有时一行简洁的代码，就能实现复杂的功能。这种创造的乐趣让我感到无比满足和快乐。</p>
-    <p>夜晚写代码也是一种反思和思考的时刻。当我回顾自己的代码，发现其中的错误或不足时，我会积极地从中吸取教训并将其改正。夜晚的宁静让我更加专注地思考问题所在，并寻找改进的方法。这种不断反思的过程，让我不断进步。</p>
-    <p>在夜晚写代码，不仅是技术上的追求，更是一种内心的享受。它让我能够在繁忙的学习生活中找到一片属于自己的宁静。在这片宁静中，我可以专注于自己的兴趣和热爱，追求技术的突破和创新。</p>
-    <p>无论是追求技术的成长，还是追寻内心的平静，在夜晚写代码几乎成为了我生活中不可或缺的一部分。它让我感受到了思考、创造和反思的乐趣，也让我变得更加坚定和自信。在夜晚写代码，不仅仅是一项活动，更是一种生活方式，一种与自己对话的方式。在这个独处的时刻里，我找到了内心的寄托，也找到了属于自己的独特的宁静。</p>
-    
-    <div class="author">鸭鸭「カモ」<br>2023年8月28日</div>
-  </div>
-  
-  <!-- 回到顶部 -->
-  <a href="#" class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">↑</a>
-  
-  <!-- 返回首页 -->
-  <a href="https://duckduckstudio.github.io/yazicbs.github.io/" class="back-to-home">返回首页</a>
-</body>
+            .back-to-home:hover {
+                background-color: rgba(255, 255, 255, 1);
+            }
+
+            .back-to-top {
+                position: fixed;
+                top: 600px;
+                /* 按钮与顶部的距离 */
+                right: 30px;
+                background-color: rgba(255, 255, 255, 0.8);
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                padding: 10px 15px;
+                font-size: 20px;
+                color: #333;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+            }
+
+            .back-to-top:hover {
+                background-color: rgba(255, 255, 255, 1);
+            }
+        </style>
+        <!-- 芙芙工具箱网页通用样式 by鸭鸭「カモ」 -->
+        <link rel="stylesheet" href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/css/universal.css">
+        <script>
+            window.addEventListener('scroll', function () {
+                var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+                var backToTopButton = document.querySelector('.back-to-top');
+
+                if (scrollPosition > 0) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+
+            /*控制台输出DuckStudio*/
+            // 前面不要加空格
+            console.log(`
+ddddd                 k         ssss                   d  i
+d     d         c c c k   k     s      t            dddd      oooo
+d     d  u   u  a     k k        sss  ttt  u   u  d    d  i  o    o
+d     d  u   u  c     k k           s  t   u   u  d    d  i  o    o
+ddddd    u u u  c c c k   k     sssss  t   u u u   ddddd  i   oooo
+
+本站维护人员：
+鸭鸭「カモ」
+欢迎关注我的bilibili频道：@鸭鸭_カモ
+https://space.bilibili.com/2054654702/
+            `)
+        </script>
+    </head>
+
+    <body>
+        <div class="overlay">
+            <!--正文-->
+            <h1>夜晚编码之乐</h1>
+            <p>我喜欢在夜晚独自坐在电脑前编写代码的时光。这是一段有趣又富有挑战的时光，给我带来了思考和创造的乐趣。夜晚给予了我一个独处且专注的机会，让我可以尽情地沉浸于代码的世界中。</p>
+            <p>当深夜来临，城市的喧嚣逐渐安静下来，我把自己关在房间里，只剩下桌上电脑屏幕和台灯散发的柔和的光芒。这时，思路变得清晰，内心也变得平静，仿佛进入了一个只有我一个人的世界中。</p>
+            <p>我开始思考那些在白天受打扰而被搁置的问题。在夜晚，我可以全身心地投入到代码的编写中。代码从我的思维中流淌而出，每一行的编写都是一次思维的延伸。我逐渐沉浸其中，忘记了时间的流逝。</p>
+            <p>每当遇到难题，我都喜欢静下心来，一点一点地分析和解决问题。这不仅是技术上的挑战，更是一种思考的过程。在这个过程中，我学会了耐心和坚持，去寻找“最优解”。</p>
+            <p>独自写代码的时候，我可以自由地追求创造力和灵感，也可以在我的代码中写一些比较抽象的代码。</p>
+            <p>夜晚的静谧给予了我一个安静的环境，让我可以尽情地思考和构想。我可以尝试各种方法和思路，探索不同的可能性。有时一行简洁的代码，就能实现复杂的功能。这种创造的乐趣让我感到无比满足和快乐。</p>
+            <p>夜晚写代码也是一种反思和思考的时刻。当我回顾自己的代码，发现其中的错误或不足时，我会积极地从中吸取教训并将其改正。夜晚的宁静让我更加专注地思考问题所在，并寻找改进的方法。这种不断反思的过程，让我不断进步。</p>
+            <p>在夜晚写代码，不仅是技术上的追求，更是一种内心的享受。它让我能够在繁忙的学习生活中找到一片属于自己的宁静。在这片宁静中，我可以专注于自己的兴趣和热爱，追求技术的突破和创新。</p>
+            <p>无论是追求技术的成长，还是追寻内心的平静，在夜晚写代码几乎成为了我生活中不可或缺的一部分。它让我感受到了思考、创造和反思的乐趣，也让我变得更加坚定和自信。在夜晚写代码，不仅仅是一项活动，更是一种生活方式，一种与自己对话的方式。在这个独处的时刻里，我找到了内心的寄托，也找到了属于自己的独特的宁静。
+            </p>
+
+            <div class="author">鸭鸭「カモ」<br>2023年8月28日</div>
+        </div>
+
+        <!-- 回到顶部 -->
+        <a href="#" class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">↑</a>
+
+        <!-- 返回首页 -->
+        <a href="https://duckduckstudio.github.io/yazicbs.github.io/" class="back-to-home">返回首页</a>
+    </body>
 </html>

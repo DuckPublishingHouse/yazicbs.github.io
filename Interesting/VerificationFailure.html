@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!-- Code by Duck Studio -->
-<!-- ©鸭鸭「カモ」 -->
-<!-- 如需搬运，请注明主页网址与本页网址。感谢！ -->
+<!-- (c) 鸭鸭「カモ」 -->
+<!-- 如需搬运，请注明主页网址与本页网址，感谢！ -->
+
 <html lang="zh">
     <head>
         <title>验证失败！</title>
@@ -13,19 +14,20 @@
         <!-- 捡没用的图标来用 -->
 
         <script>
-            /*控制台输出DuckStudio*/
-            console.log(`
-            aaaad                 a         oaaa                   a  a             
-            a     a          vav  a   a     a      a            hh a       bg       
-            a     a  h   a  a     a a        aad  aaa  a   u  a    a  a  a    a     
-            a     a  h   a  c     a a           a  a   a   s  a    a  a  a    a     
-            aooaa    a a a  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a      
-  
-            本站维护人员：
-            鸭鸭「カモ」
-            欢迎关注我们的bilibili频道：@鸭鸭_カモ
-            https://space.bilibili.com/2054654702/
-        `)
+           // 前面不要加空格
+           console.log(`
+ddddd                 k         ssss                   d  i
+d     d         c c c k   k     s      t            dddd      oooo
+d     d  u   u  a     k k        sss  ttt  u   u  d    d  i  o    o
+d     d  u   u  c     k k           s  t   u   u  d    d  i  o    o
+ddddd    u u u  c c c k   k     sssss  t   u u u   ddddd  i   oooo
+
+本站维护人员：
+鸭鸭「カモ」
+欢迎关注我的bilibili频道：@鸭鸭_カモ
+https://space.bilibili.com/2054654702/
+回到主页：https://duckduckstudio.github.io/yazicbs.github.io/
+            `)
         </script>
 
         <style>
@@ -81,8 +83,8 @@
             </div>
             <p id="xf" style="display: none;">你找错地方了，赶紧走！这里不是你该来的地方！<br/>ERROR CODE: 404 No Page.</p>
             <div id="info" style="display: none;">
-                <p>设备参数：<span id="info1">[NaN]</span></p>
-                <p>比较: <span id="info2">[NaN]</span></p>
+                <p>设备参数：<span id="info1">[NULL]</span></p>
+                <p>比较: <span id="info2">[NULL]</span></p>
             </div>
         </div>
 
@@ -141,6 +143,7 @@
             if (userAgent.includes("iPhone")) {
                 is_vf()
             /*
+            // 这是测试用的代码
             } else if (userAgent.includes("Windows NT 10.0") && !userAgent.includes("ARM")) {
                 const info1Span = document.getElementById('info1');
                 info1Span.textContent = userAgent;

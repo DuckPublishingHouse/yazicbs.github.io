@@ -1,130 +1,129 @@
 <!DOCTYPE html>
+
 <html lang="zh">
+    <head>
+        <title>啊哦！看起来你找错地方了捏！</title>
+        <meta charset="utf-8">
+        <link rel="icon" type="image/x-icon" href="https://duckduckstudio.github.io/yazicbs.github.io/icos/773x716.png">
+        <style>
+            body {
+                background-color: #f5f5dc;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: Arial, sans-serif;
+            }
 
-<head>
-    <title>啊哦！看起来你找错地方了捏！</title>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/x-icon" href="https://duckduckstudio.github.io/yazicbs.github.io/icos/773x716.png">
-    <style>
-        body {
-            background-color: #f5f5dc;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-        }
+            .container {
+                background-color: rgba(255, 255, 255, 0.7);
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+        </style>
+        <!-- 芙芙工具箱网页通用样式 by鸭鸭「カモ」 -->
+        <link rel="stylesheet" href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/css/universal.css">
+    </head>
 
-        .container {
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-    </style>
-    <!-- 芙芙工具箱网页通用样式 by鸭鸭「カモ」 -->
-    <link rel="stylesheet" href="https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/css/universal.css">
-</head>
+    <body>
+        <div class="container">
+            <h1>你似乎访问了一个不存在的界面！</h1>
+            <p>ERROR CODE: <strong>404 (服务器找不到请求的资源)</strong><br>
+                <a href="https://duckduckstudio.github.io/yazicbs.github.io/zh_cn/">[回到主页]</a>
+            </p>
+            <h3>链接正确？请尝试执行以下步骤:</h3>
+            <ol>
+                <li>按<code>F5</code>键刷新页面重试</li>
+                <li>询问给你链接的人或网站的管理员，看看他们是否给予了你错误的链接</li>
+                <li>查看配置文件，是否映射本网站到其他位置</li>
+                <li>稍等后重试，也许<code>GitHub Pages</code>正在部署更新后的网页。你可以<a href="https://github.com/DuckDuckStudio/yazicbs.github.io/actions">点我查看部署情况</a></li>
+                <li>点击上面的链接去寻找你需要访问的网站</li>
+                <li>联系管理员 [邮箱<a href="mailto:Yzcbs123@163.com">Yzcbs123@163.com</a>]</li>
+            </ol>
 
-<body>
-    <div class="container">
-        <h1>你似乎访问了一个不存在的界面！</h1>
-        <p>ERROR CODE: <strong>404 (服务器找不到请求的资源)</strong><br>
-            <a href="https://duckduckstudio.github.io/yazicbs.github.io/zh_cn/">[回到主页]</a>
-        </p>
-        <h3>链接正确？请尝试执行以下步骤:</h3>
-        <ol>
-            <li>按<code>F5</code>键刷新页面重试</li>
-            <li>询问给你链接的人或网站的管理员，看看他们是否给予了你错误的链接</li>
-            <li>查看配置文件，是否映射本网站到其他位置</li>
-            <li>稍等后重试，也许<code>GitHub Pages</code>正在部署更新后的网页。你可以<a href="https://github.com/DuckDuckStudio/yazicbs.github.io/actions">点我查看部署情况</a></li>
-            <li>点击上面的链接去寻找你需要访问的网站</li>
-            <li>联系管理员 [邮箱<a href="mailto:Yzcbs123@163.com">Yzcbs123@163.com</a>]</li>
-        </ol>
+            <h3>如果您是网站管理员:</h3>
+            <h4>访问信息</h4>
+            <ul>
+                <li><strong>ip:</strong> <span id="ip"></span></li>
+                <li><strong>head:</strong> <span id="browser"></span></li>
+                <li><strong>time:</strong> <span id="time"></span></li>
+                <li><strong>resource:</strong> <span id="resource"></span></li>
+            </ul>
 
-        <h3>如果您是网站管理员:</h3>
-        <h4>访问信息</h4>
-        <ul>
-            <li><strong>ip:</strong> <span id="ip"></span></li>
-            <li><strong>head:</strong> <span id="browser"></span></li>
-            <li><strong>time:</strong> <span id="time"></span></li>
-            <li><strong>resource:</strong> <span id="resource"></span></li>
-        </ul>
+            <script>
+                // 获取浏览器类型
+                const browser = navigator.userAgent;
 
-        <script>
-            // 获取浏览器类型
-            const browser = navigator.userAgent;
+                // 获取当前时间
+                const time = new Date().toISOString();
 
-            // 获取当前时间
-            const time = new Date().toISOString();
+                // 显示信息
+                document.getElementById('browser').innerText = browser;
+                document.getElementById('time').innerText = time;
 
-            // 显示信息
-            document.getElementById('browser').innerText = browser;
-            document.getElementById('time').innerText = time;
+                // 获取大致访问地址
+                /* 
+                * JS输出分类: 位置
+                */
+                fetch('https://ipapi.co/json/')
+                    .then(response => response.json())
+                    .then(data => {
+                        const city = data.city; // 城市 Zhangzhou
+                        const province = data.region; // 省份 Fujian
+                        const country = data.country_code; // 国家代码 CN
 
-            // 获取大致访问地址
-            /* 
-            * JS输出分类: 位置
-            */
-            fetch('https://ipapi.co/json/')
-                .then(response => response.json())
-                .then(data => {
-                    const city = data.city; // 城市 Zhangzhou
-                    const province = data.region; // 省份 Fujian
-                    const country = data.country_code; // 国家代码 CN
-
-                    const cityMessages = {
-                        'CN': {
-                            'Fujian': {
-                                'Xiamen': '厦门',
-                                'Quanzhou': '泉州',
-                                'Fuzhou': '福州',
-                                'Putian': '莆田',
-                                'Zhangzhou': '漳州',
-                                'Nanping': '南平',
-                                'Longyan': '龙岩',
-                                'Sanming': '三明',
-                                'Ningde': '宁德'
+                        const cityMessages = {
+                            'CN': {
+                                'Fujian': {
+                                    'Xiamen': '厦门',
+                                    'Quanzhou': '泉州',
+                                    'Fuzhou': '福州',
+                                    'Putian': '莆田',
+                                    'Zhangzhou': '漳州',
+                                    'Nanping': '南平',
+                                    'Longyan': '龙岩',
+                                    'Sanming': '三明',
+                                    'Ningde': '宁德'
+                                },
+                                'Guangdong': {
+                                    'Guangzhou': '广州'
+                                },
+                                'Beijing': '北京',
+                                'Shanghai': '上海',
+                                'Tianjin': '天津',
+                                'Chongqing': '重庆',
                             },
-                            'Guangdong': {
-                                'Guangzhou': '广州'
-                            },
-                            'Beijing': '北京',
-                            'Shanghai': '上海',
-                            'Tianjin': '天津',
-                            'Chongqing': '重庆',
-                        },
-                    };
+                        };
 
-                    let welcomeMessage = '';
+                        let welcomeMessage = '';
 
-                    if (cityMessages[country] && cityMessages[country][province] && cityMessages[country][province][city]) {
-                        welcomeMessage = `${cityMessages[country][province][city]} << ${country} | ${province} | ${city}`;
-                    } else {
-                        console.warn("[WARN(位置-映射)] 你所在的地区没有被映射，请提交Issue或PR补充，记得带上控制台输出[TEST(位置)]")
-                        welcomeMessage = `${city || province} << ${country} | ${province} | ${city}`;
-                    }
+                        if (cityMessages[country] && cityMessages[country][province] && cityMessages[country][province][city]) {
+                            welcomeMessage = `${cityMessages[country][province][city]} << ${country} | ${province} | ${city}`;
+                        } else {
+                            console.warn("[WARN(位置-映射)] 你所在的地区没有被映射，请提交Issue或PR补充，记得带上控制台输出[TEST(位置)]")
+                            welcomeMessage = `${city || province} << ${country} | ${province} | ${city}`;
+                        }
 
-                    console.log(`%c[TEST(位置)] ${country} | ${province} | ${city}`, 'color: cyan;');
+                        console.log(`%c[TEST(位置)] ${country} | ${province} | ${city}`, 'color: cyan;');
 
-                    const helloSpan = document.getElementById('ip');
-                    helloSpan.textContent = welcomeMessage;
-                })
-            .catch(error => console.error('[ERROR(位置)]获取地区失败:', error));
+                        const helloSpan = document.getElementById('ip');
+                        helloSpan.textContent = welcomeMessage;
+                    })
+                .catch(error => console.error('[ERROR(位置)]获取地区失败:', error));
 
-            // 获取资源地址
-            const currentUrl = window.location.href;
-            const baseUrl = 'https://github.com/DuckDuckStudio/yazicbs.github.io/tree/main/';
-            const path = currentUrl.replace('https://duckduckstudio.github.io/yazicbs.github.io/', '');
-            const githubLink = baseUrl + path;
-            document.getElementById('resource').innerHTML = '<a href="' + githubLink + '">' + githubLink + '</a>';
-        </script>
+                // 获取资源地址
+                const currentUrl = window.location.href;
+                const baseUrl = 'https://github.com/DuckDuckStudio/yazicbs.github.io/tree/main/';
+                const path = currentUrl.replace('https://duckduckstudio.github.io/yazicbs.github.io/', '');
+                const githubLink = baseUrl + path;
+                document.getElementById('resource').innerHTML = '<a href="' + githubLink + '">' + githubLink + '</a>';
+            </script>
 
-        <div class="right-text">
-            <h4>查看其他语言的翻译页:</h4>
-            <p><a href="https://duckduckstudio.github.io/yazicbs.github.io/en/404.html">English</a>&nbsp;→&nbsp;Last translated: 2024/8/21</p>
-            <p><a href="https://duckduckstudio.github.io/yazicbs.github.io/jp/404.html">日本語</a>&nbsp;→&nbsp;Last translated: 2024/8/21</p>
+            <div class="right-text">
+                <h4>查看其他语言的翻译页:</h4>
+                <p><a href="https://duckduckstudio.github.io/yazicbs.github.io/en/404.html">English</a>&nbsp;→&nbsp;Last translated: 2024/8/21</p>
+                <p><a href="https://duckduckstudio.github.io/yazicbs.github.io/jp/404.html">日本語</a>&nbsp;→&nbsp;Last translated: 2024/8/21</p>
+            </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>

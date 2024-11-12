@@ -1,76 +1,78 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Color Display] 颜色代码显示</title>
-    <link rel="icon" type="image/png" href="https://duckduckstudio.github.io/yazicbs.github.io/icos/Tools.png">
-    <script>
-      /*控制台输出DuckStudio*/
-      console.log(`
-      aaaad                 a         oaaa                   a  a             
-      a     a          vav  a   a     a      a            hh a       bg       
-      a     a  h   a  a     a a        aad  aaa  a   u  a    a  a  a    a     
-      a     a  h   a  c     a a           a  a   a   s  a    a  a  a    a     
-      aooaa    a a a  am cp a   a     aw ra  a   hb l    a  aa  a  ya  a      
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>[Color Display] 颜色代码显示</title>
+        <link rel="icon" type="image/png" href="https://duckduckstudio.github.io/yazicbs.github.io/icos/Tools.png">
+        <script>
+            // 前面不要加空格
+            console.log(`
+ddddd                 k         ssss                   d  i
+d     d         c c c k   k     s      t            dddd      oooo
+d     d  u   u  a     k k        sss  ttt  u   u  d    d  i  o    o
+d     d  u   u  c     k k           s  t   u   u  d    d  i  o    o
+ddddd    u u u  c c c k   k     sssss  t   u u u   ddddd  i   oooo
 
-      本站维护人员：
-      鸭鸭「カモ」
-      欢迎关注我们的bilibili频道：@鸭鸭_カモ
-      https://space.bilibili.com/2054654702/
-      回到主页：https://duckduckstudio.github.io/yazicbs.github.io/
-      本工具已整合至 芙芙工具箱 https://duckduckstudio.github.io/yazicbs.github.io/Tools/Fufu_Tools/
-      `)
-    </script>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            transition: background-color 0.5s;
-        }
+本站维护人员：
+鸭鸭「カモ」
+欢迎关注我的bilibili频道：@鸭鸭_カモ
+https://space.bilibili.com/2054654702/
+回到主页：https://duckduckstudio.github.io/yazicbs.github.io/
+            `)
+        </script>
+        <style>
+            body,html {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: Arial, sans-serif;
+                transition: background-color 0.5s;
+            }
 
-        #colorCode {
-            font-size: 5em; /* 增大字体大小 */
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            user-select: none; /* 防止用户选择文本 */
-        }
+            #colorCode {
+                font-size: 5em;
+                /* 增大字体大小 */
+                color: white;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                user-select: none;
+                /* 防止用户选择文本 */
+            }
 
-        #colorInput {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            font-size: 1em;
-            padding: 10px;
-        }
-    </style>
-</head>
-<body>
+            #colorInput {
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1000;
+                font-size: 1em;
+                padding: 10px;
+            }
+        </style>
+    </head>
 
-    <span id="colorCode">#FFFFFF</span>
+    <body>
 
-    <input type="text" id="colorInput" placeholder="Enter color code" />
+        <span id="colorCode">#FFFFFF</span>
 
-    <script>
-  document.getElementById('colorInput').addEventListener('input', function(e) {
-    var color = e.target.value;
-    var colorCode = document.getElementById('colorCode');
+        <input type="text" id="colorInput" placeholder="Enter color code" />
 
-    // 尝试将输入值作为背景颜色设置
-    try {
-      document.body.style.backgroundColor = color;
-      colorCode.textContent = color;
-    } catch (error) {
-      console.log("Invalid color format: ", error);
-    }
-  });
-    </script>
+        <script>
+            document.getElementById('colorInput').addEventListener('input', function (e) {
+                var color = e.target.value;
+                var colorCode = document.getElementById('colorCode');
 
-</body>
+                // 尝试将输入值作为背景颜色设置
+                try {
+                    document.body.style.backgroundColor = color;
+                    colorCode.textContent = color;
+                } catch (error) {
+                    console.log("Invalid color format: ", error);
+                }
+            });
+        </script>
+    </body>
 </html>

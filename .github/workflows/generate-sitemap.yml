@@ -1,0 +1,58 @@
+name: 生成 Sitemap
+
+on:
+  push:
+    branches:
+      - main
+      - sitemap-20241112
+    paths:
+      - '**/*.html'
+  workflow_dispatch:
+
+jobs:
+  generate_sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v3
+
+      - name: 设置 Node.js 环境
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'least'
+
+      - name: 创建 Sitemap
+        run: node .action_scripts/generate-sitemap.js
+
+      - name: 创建新分支
+        run: |
+          BRANCH_NAME="sitemap-update-$(date +%Y%m%d%H%M%S)"
+          git checkout -b $BRANCH_NAME
+          echo "已创建分支 $BRANCH_NAME"
+
+      - name: 提交并推送 sitemap.xml
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add sitemap.xml
+          git commit -m "更新 sitemap.xml"
+          git push --set-upstream origin $BRANCH_NAME
+
+      - name: 创建 Pull Request
+        run: |
+          # 安装 GitHub CLI
+          sudo apt-get install gh
+          
+          # 获取当前日期和时间
+          DATE_TIME=$(date '+%Y/%m/%d %H:%M')
+          
+          # 使用 GitHub CLI 创建 PR，标题使用当前日期时间，内容使用仓库默认模板
+          gh pr create --title "[${DATE_TIME}] Auto update sitemap" \
+                       --body "" \
+                       --base main \
+                       --head $BRANCH_NAME \
+                       --reviewer fjwxzde \
+                       --reviewer DuckDuckStudio
+
+          echo "Pull Request 创建成功。"

@@ -27,7 +27,7 @@ jobs:
     - name: 安装依赖
       run: |
         python -m pip install --upgrade pip
-        pip install requests
+        pip install -r .action_scripts/Python/requirements.txt
 
     - name: 检查链接有效性
       run: python ./.action_scripts/link_checker.py

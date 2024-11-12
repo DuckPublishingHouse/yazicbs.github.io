@@ -1,10 +1,6 @@
 .vs/
 # python
 .venv/
-# npm
-node_modules/
-package-lock.json
-package.json
 # 编写中
 other/links/
 # Just for fun

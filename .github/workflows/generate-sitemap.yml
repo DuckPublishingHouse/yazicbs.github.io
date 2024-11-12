@@ -20,10 +20,10 @@ jobs:
       - name: 设置 Node.js 环境
         uses: actions/setup-node@v3
         with:
-          node-version: 'least'
+          node-version: '20'
 
       - name: 创建 Sitemap
-        run: node .action_scripts/generate-sitemap.js
+        run: node .action_scripts/generate-sitemap.mjs
 
       - name: 创建新分支
         run: |

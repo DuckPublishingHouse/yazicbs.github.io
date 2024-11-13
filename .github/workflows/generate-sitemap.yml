@@ -37,10 +37,7 @@ jobs:
           git push --set-upstream origin $BRANCH_NAME
 
       - name: 创建 Pull Request
-        run: |
-          # 安装 GitHub CLI
-          sudo apt-get install gh
-          
+        run: |          
           # 获取当前日期和时间
           DATE_TIME=$(date '+%Y/%m/%d %H:%M')
           
@@ -49,7 +46,6 @@ jobs:
                        --body "" \
                        --base main \
                        --head $BRANCH_NAME \
-                       --reviewer fjwxzde \
-                       --reviewer DuckDuckStudio
+                       --reviewer fjwxzde, DuckDuckStudio
 
           echo "Pull Request 创建成功。"

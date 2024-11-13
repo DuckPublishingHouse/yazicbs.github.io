@@ -23,7 +23,7 @@ jobs:
           node-version: '20'
 
       - name: 创建 Sitemap
-        run: node .action_scripts/generate-sitemap.mjs
+        run: node .action_scripts/JavaScript/generate-sitemap.mjs
 
       - name: 创建新分支
         run: |

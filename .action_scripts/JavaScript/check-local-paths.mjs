@@ -1,6 +1,6 @@
-const fs = require('fs');
-const glob = require('glob');
-const path = require('path');
+import { readFileSync } from 'fs';
+import { sync } from 'glob';
+import { relative } from 'path';
 
 // 修改正则表达式，以匹配绝对路径或包含驱动器的路径
 const pattern = /(?:[A-Z]:\\)/g;
@@ -19,10 +19,10 @@ const skipFolders = [
 let foundPath = false; // 用于跟踪是否已经找到路径
 
 files.forEach(globPattern => {
-    const filePaths = glob.sync(globPattern, { nodir: true });
+    const filePaths = sync(globPattern, { nodir: true });
     filePaths.forEach(filePath => {
         // 获取相对路径，并标准化路径分隔符
-        const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
+        const relativePath = relative(process.cwd(), filePath).replace(/\\/g, '/');
 
         // 检查是否在跳过的文件夹中
         if (skipFolders.some(folder => relativePath.startsWith(folder.replace(/\\/g, '/')))) {
@@ -34,7 +34,7 @@ files.forEach(globPattern => {
             return;
         }
 
-        const content = fs.readFileSync(filePath, 'utf8');
+        const content = readFileSync(filePath, 'utf8');
         const lines = content.split('\n');
         
         lines.forEach(line => {

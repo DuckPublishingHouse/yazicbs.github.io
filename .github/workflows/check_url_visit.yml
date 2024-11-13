@@ -30,4 +30,4 @@ jobs:
         pip install -r .action_scripts/Python/requirements.txt
 
     - name: 检查链接有效性
-      run: python ./.action_scripts/link_checker.py
+      run: python ./.action_scripts/Python/link_checker.py

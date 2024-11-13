@@ -70,6 +70,12 @@ var playlists = [
             url: 'https://music.163.com/song/media/outer/url?id=2053918838.mp3',
             pic: 'https://p2.music.126.net/kojx4UU24KVgoOf_szFCmg==/109951168665117523.jpg'
         },
+        {
+            title: '赴大荒',
+            author: '塞壬唱片-MSR / Kirara Magic',
+            url: 'https://music.163.com/song/media/outer/url?id=2124415181.mp3',
+            pic: 'https://p1.music.126.net/ryCmscVNLU0y4BEEQPhTyg==/109951169316167603.jpg'
+        },
     ],
     // 日推 - Live
     [

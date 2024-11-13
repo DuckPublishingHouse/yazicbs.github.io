@@ -36,8 +36,6 @@ jobs:
           git commit -m "更新 sitemap.xml"
           git push --set-upstream origin $BRANCH_NAME
 
-      - name: 创建 Pull Request
-        run: |          
           # 获取当前日期和时间
           DATE_TIME=$(date '+%Y/%m/%d %H:%M')
           
@@ -46,6 +44,7 @@ jobs:
                        --body "" \
                        --base main \
                        --head $BRANCH_NAME \
-                       --reviewer fjwxzde, DuckDuckStudio
+                       --reviewer fjwxzde \
+                       --reviewer DuckDuckStudio
 
           echo "Pull Request 创建成功。"

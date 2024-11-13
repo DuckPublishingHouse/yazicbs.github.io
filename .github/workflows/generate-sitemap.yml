@@ -26,12 +26,14 @@ jobs:
         run: node .action_scripts/JavaScript/generate-sitemap.mjs
 
       - name: 提交并推送 sitemap.xml
+        env:
+          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
         run: |
           BRANCH_NAME="sitemap-update-$(date +%Y%m%d%H%M%S)"
           git checkout -b $BRANCH_NAME
           echo "已创建分支 $BRANCH_NAME"
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+          git config --global user.name "${{ secrets.BOT_ACCOUNT }}"
+          git config --global user.email "${{ secrets.BOT_EMAIL }}"
           git add sitemap.xml
           git commit -m "更新 sitemap.xml"
           git push --set-upstream origin $BRANCH_NAME

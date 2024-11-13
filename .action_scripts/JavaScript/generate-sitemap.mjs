@@ -36,7 +36,7 @@ try {
   sitemap += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
                xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
-                                   http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">\n`;
+                                   http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">\n\n`;
 
   // 生成 URL 列表
   urls.forEach(url => {

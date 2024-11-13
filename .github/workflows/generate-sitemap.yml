@@ -41,13 +41,8 @@ jobs:
           # 获取当前日期和时间
           DATE_TIME=$(date '+%Y/%m/%d %H:%M')
 
-          # 获取仓库名称和所有者
-          REPO_OWNER=${{ github.repository_owner }}
-          REPO_NAME=${{ github.event.repository.name }}
-          RUN_ID=${{ github.run_id }}
-
           # 生成工作流 URL
-          WORKFLOW_URL="https://github.com/${REPO_OWNER}/${REPO_NAME}/actions/runs/${RUN_ID}"
+          WORKFLOW_URL="https://github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/actions/runs/${{ github.run_id }}"
 
           # 使用 GitHub CLI 创建 PR，动态设置 body 内容为工作流链接
           gh pr create --title "[${DATE_TIME}] Auto update sitemap" \

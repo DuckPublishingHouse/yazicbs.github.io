@@ -25,14 +25,11 @@ jobs:
       - name: 创建 Sitemap
         run: node .action_scripts/JavaScript/generate-sitemap.mjs
 
-      - name: 创建新分支
+      - name: 提交并推送 sitemap.xml
         run: |
           BRANCH_NAME="sitemap-update-$(date +%Y%m%d%H%M%S)"
           git checkout -b $BRANCH_NAME
           echo "已创建分支 $BRANCH_NAME"
-
-      - name: 提交并推送 sitemap.xml
-        run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add sitemap.xml

@@ -5,6 +5,9 @@ import { fileURLToPath } from 'url';
 // 简化的辅助函数来获取当前模块的目录
 const getScriptDir = () => path.dirname(fileURLToPath(import.meta.url));
 
+console.log('Current working directory:', process.cwd());
+console.log('Expected path to sitemap script:', path.join(__dirname, '.action_scripts/generate-sitemap.mjs'));
+
 try {
   const scriptDir = getScriptDir(); // 直接使用简化函数获取脚本目录
   const repoRoot = path.join(scriptDir, '..', '..'); // 当前目录向上两级，得到项目根目录

@@ -22,7 +22,7 @@ try {
         scanDirectory(fullPath);
       } else if (file.endsWith('.html')) {
         const relativePath = path.relative(repoRoot, fullPath).replace(/\\/g, '/');
-        const encodedPath = encodeURIComponent(relativePath); // 对路径进行编码
+        const encodedPath = encodeURIComponent(relativePath).replace(/%2F/g, '/'); // 对路径进行编码并替换%2F为/
         const fullUrl = `${repoUrl}/${encodedPath}`;
         urls.add(fullUrl);
       }

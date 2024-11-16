@@ -18,17 +18,17 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          auto_merge_info=$(gh pr view ${{ github.event.pull_request.number }} --json autoMergeRequest -q '.autoMergeRequest.enabledAt')
+          auto_merge_info=$(gh pr view ${{ github.event.pull_request.number }} --json autoMergeRequest)
 
           if [ "$auto_merge_info" != "null" ]; then
             echo "[INFO] 已启用自动合并, 正在添加 'DEV-已启用自动合并' 标签..."
-            gh pr edit $PR_NUMBER --add-label "DEV-已启用自动合并"
+            gh pr edit ${{ github.event.pull_request.number }} --add-label "DEV-已启用自动合并"
           else
             echo "[INFO] 自动合并已禁用, 正在检查 'DEV-已启用自动合并' 标签是否存在..."
-            LABEL_EXISTS=$(gh pr view $PR_NUMBER --json labels -q ".labels | map(.name) | contains([\"DEV-已启用自动合并\"])")
+            LABEL_EXISTS=$(gh pr view ${{ github.event.pull_request.number }} --json labels -q ".labels | map(.name) | contains([\"DEV-已启用自动合并\"])")
             if [ "$LABEL_EXISTS" == "true" ]; then
               echo "[INFO] 找到 'DEV-已启用自动合并' 标签, 正在移除..."
-              gh pr edit $PR_NUMBER --remove-label "auto-merge-enabled"
+              gh pr edit ${{ github.event.pull_request.number }} --remove-label "auto-merge-enabled"
             else
               echo "[WARNING] 未找到 'DEV-已启用自动合并' 标签, 跳过此步"
             fi

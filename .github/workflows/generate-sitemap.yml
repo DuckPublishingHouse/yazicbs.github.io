@@ -27,7 +27,7 @@ jobs:
 
       - name: 提交并推送 sitemap.xml
         env:
-          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           BRANCH_NAME="sitemap-update-$(date +%Y%m%d%H%M%S)"
           git checkout -b $BRANCH_NAME
@@ -42,7 +42,7 @@ jobs:
           DATE_TIME=$(date '+%Y/%m/%d %H:%M')
 
           # 生成工作流 URL
-          WORKFLOW_URL="https://github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/actions/runs/${{ github.run_id }}"
+          WORKFLOW_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
           # 使用 GitHub CLI 创建 PR，动态设置 body 内容为工作流链接
           gh pr create --title "[${DATE_TIME}] Auto update sitemap" \

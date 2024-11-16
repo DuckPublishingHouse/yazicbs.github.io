@@ -1,0 +1,38 @@
+name: 处理自动合并标签
+
+on:
+  pull_request:
+    types:
+      - auto_merge_enabled
+      - auto_merge_disabled
+
+jobs:
+  handle_auto_merge_labels:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 设置<DEV-已启用自动合并>标签
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          auto_merge_info=$(gh pr view ${{ github.event.pull_request.number }} --json autoMergeRequest --repo ${{ github.repository }})
+
+          if [ "$auto_merge_info" != '{"autoMergeRequest":null}' ]; then
+            echo "[INFO] 已启用自动合并, 正在检查 'DEV-已启用自动合并' 标签是否存在..."
+            LABEL_EXISTS=$(gh pr view ${{ github.event.pull_request.number }} --json labels --repo ${{ github.repository }} -q ".labels | map(.name) | contains([\"DEV-已启用自动合并\"])")
+            if [ "$LABEL_EXISTS" == "false" ]; then
+              echo "[INFO] 未找到 'DEV-已启用自动合并' 标签, 正在添加..."
+              gh pr edit ${{ github.event.pull_request.number }} --add-label "DEV-已启用自动合并" --repo ${{ github.repository }}
+            else
+              echo "[WARNING] 找到 'DEV-已启用自动合并' 标签, 跳过此步"
+            fi
+          else
+            echo "[INFO] 自动合并已禁用, 正在检查 'DEV-已启用自动合并' 标签是否存在..."
+            LABEL_EXISTS=$(gh pr view ${{ github.event.pull_request.number }} --json labels --repo ${{ github.repository }} -q ".labels | map(.name) | contains([\"DEV-已启用自动合并\"])")
+            if [ "$LABEL_EXISTS" == "true" ]; then
+              echo "[INFO] 找到 'DEV-已启用自动合并' 标签, 正在移除..."
+              gh pr edit ${{ github.event.pull_request.number }} --remove-label "DEV-已启用自动合并" --repo ${{ github.repository }}
+            else
+              echo "[WARNING] 未找到 'DEV-已启用自动合并' 标签, 跳过此步"
+            fi
+          fi

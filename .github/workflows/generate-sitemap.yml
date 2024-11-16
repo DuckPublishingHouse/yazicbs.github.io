@@ -27,7 +27,7 @@ jobs:
 
       - name: 提交并推送 sitemap.xml
         env:
-          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           BRANCH_NAME="sitemap-update-$(date +%Y%m%d%H%M%S)"
           git checkout -b $BRANCH_NAME

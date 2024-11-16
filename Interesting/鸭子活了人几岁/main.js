@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function 更新岁数() {
         const 现在 = new Date();
-        let 岁数 = "嘎了";
+        let 岁数 = ["🦆嘎了🦆",""];
         let 活了多久;
 
         // 鸭子活 8 年
@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 每秒更新一次
-    setInterval(更新岁数, 1000);
+    // 每0.01鸭日(144s)更新一次
+    setInterval(更新岁数, 144);
 
     // 初次调用以显示时间
     更新岁数();

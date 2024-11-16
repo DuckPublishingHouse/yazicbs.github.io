@@ -62,10 +62,46 @@ var playlists = [
             pic: 'https://p2.music.126.net/awzv1LpuBJiKTeB7roh_Aw==/109951168434956885.jpg'
         },
     ],
+    // 明日方舟 (塞壬唱片-MSR)
+    [
+        {
+            title: '不存在的乐园',
+            author: '塞壬唱片-MSR / Erik Castro',
+            url: 'https://music.163.com/song/media/outer/url?id=2053918838.mp3',
+            pic: 'https://p2.music.126.net/kojx4UU24KVgoOf_szFCmg==/109951168665117523.jpg'
+        },
+        {
+            title: '赴大荒',
+            author: '塞壬唱片-MSR / Kirara Magic',
+            url: 'https://music.163.com/song/media/outer/url?id=2124415181.mp3',
+            pic: 'https://p1.music.126.net/ryCmscVNLU0y4BEEQPhTyg==/109951169316167603.jpg'
+        },
+    ],
+    // 日推 - Live
+    [
+        {
+            title: 'jiggy boogy (sped up)',
+            author: 'Study Group',
+            url: 'https://music.163.com/song/media/outer/url?id=2615267878.mp3',
+            pic: 'https://p1.music.126.net/E3byOaUZwLP8MNtXfKgvuw==/109951169853517770.jpg'
+        },
+        {
+            title: 'junkie',
+            author: 'Study Group',
+            url: 'https://music.163.com/song/media/outer/url?id=2607737920.mp3',
+            pic: 'https://p1.music.126.net/4eYqE7mlVq_fxHihCmUM4g==/109951169778904902.jpg'
+        },
+        {
+            title: 'Fallen Angel',
+            author: 'UnicornPhantom',
+            url: 'https://music.163.com/song/media/outer/url?id=2071485908.mp3',
+            pic: 'https://p2.music.126.net/RnkKxlngZH2A0KEphrBGnw==/109951168826312208.jpg'
+        },
+    ],
 ];
 
 // 从歌单列表中随机选择一个歌单
-var randomPlaylistIndex = Math.floor(/* 四舍五入 */Math.random() * playlists.length);
+var randomPlaylistIndex = Math.floor(Math.random() * playlists.length);
 // 关于随机，详见MDN: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 // 伪随机
 var randomPlaylist = playlists[randomPlaylistIndex];
@@ -76,7 +112,8 @@ const playlistNames = {
     1: "崩铁",
     2: "原神",
     3: "崩坏3",
-    //4: "日推",
+    4: "明日方舟 (塞壬唱片-MSR)",
+    5: "日推 - Live",
     default: "[WARN(歌单-选择-索引越界)] 未定义歌单名称"
     // 最后更新分类：2024/6/20
 };

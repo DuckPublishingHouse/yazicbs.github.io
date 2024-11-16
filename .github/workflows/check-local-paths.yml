@@ -25,4 +25,4 @@ jobs:
       run: npm install glob
 
     - name: 运行本地路径检查
-      run: node ./.action_scripts/check-local-paths.js
+      run: node ./.action_scripts/JavaScript/check-local-paths.mjs

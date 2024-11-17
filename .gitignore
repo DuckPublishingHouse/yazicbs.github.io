@@ -8,3 +8,5 @@ zh_cn/js/neofetch.js
 # TEST
 test/
 test.*
+# npm
+node_modules/

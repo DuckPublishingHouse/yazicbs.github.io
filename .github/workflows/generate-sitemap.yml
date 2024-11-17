@@ -22,7 +22,15 @@ jobs:
         with:
           node-version: '20'
 
+      - name: 安装依赖
+        run: |
+          cd .action_scripts/JavaScript
+          npm install
+          cd ../..
+
       - name: 创建 Sitemap
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: node .action_scripts/JavaScript/generate-sitemap.mjs
 
       - name: 提交并推送 sitemap.xml
@@ -49,6 +57,7 @@ jobs:
                        --body "Created through the [workflow](${WORKFLOW_URL})." \
                        --base main \
                        --head $BRANCH_NAME \
+                       --label "工作流,DEV-开发分支合并" \
                        --reviewer Luna-Grace \
                        --reviewer DuckDuckStudio
 

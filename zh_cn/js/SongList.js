@@ -1,6 +1,8 @@
 // 网页左下角的歌单
-// Song url:https://music.163.com/song/media/outer/url?id=****.mp3 (****处填音乐id)
+// Song url: https://music.163.com/song/media/outer/url?id=****.mp3 (****处填音乐id)
 // APlayer doc: https://aplayer.js.org/#/zh-Hans/?id=%E5%8F%82%E6%95%B0
+
+// 别加歌词别加歌词，弄过了，样式不好弄
 
 /* 
 * JS输出分类: 歌单

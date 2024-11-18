@@ -37,85 +37,85 @@
         <div class="main">
             <canvas id="canvas"></canvas>
         </div>
+        <script>
+            // 获取画布元素和上下文
+            let canvas = document.querySelector("#canvas");
+            let ctx = canvas.getContext("2d");
+
+            // 设置画布大小为窗口大小
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // 存储所有流星的数组
+            let meteors = [];
+            // 流星的数量
+            let allstar = 40;
+
+            // 初始化函数，生成指定数量的流星
+            function init() {
+                for (let i = 0; i < allstar; i++) {
+                    newmeteor(); // 创建新的流星对象并添加到数组中
+                }
+            }
+
+            // 创建新的流星对象并添加到数组中
+            function newmeteor() {
+                meteors.push({
+                    // 流星的尾巴位置
+                    lines: [{
+                        x: parseInt(Math.random() * canvas.width),
+                        y: parseInt(Math.random() * canvas.height),
+                    }],
+                    // 流星的存在时间
+                    life: parseInt(Math.random() * 100) + 100,
+                    // 流星的年龄
+                    age: 0
+                });
+            }
+
+            // 绘制函数，用于绘制所有的流星
+            function draw() {
+                // 清除画布
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // 遍历绘制每个流星
+                for (let i = 0; i < meteors.length; i++) {
+                    let meteor = meteors[i];
+                    let lines = meteor.lines;
+
+                    // 绘制流星的尾巴
+                    for (let j = 0; j < lines.length; j++) {
+                        ctx.fillStyle = `rgba(255,255,255,${j / lines.length})`;
+                        ctx.fillRect(lines[j].x, lines[j].y, 1, 1);
+                    }
+
+                    // 绘制流星的头部
+                    ctx.fillStyle = 'yellow';
+                    let s_head = lines[lines.length - 1];
+                    ctx.fillRect(s_head.x, s_head.y, 2, 2);
+
+                    // 更新流星的位置
+                    if (meteor.age <= meteor.life / 2) {
+                        lines.push({
+                            x: s_head.x + 1,
+                            y: s_head.y + 0.3
+                        });
+                    } else {
+                        lines.shift();
+                    }
+
+                    // 增加流星的年龄，并在其寿命结束时移除并生成新的流星
+                    meteor.age++;
+                    if (meteor.age >= meteor.life) {
+                        meteors.splice(i, 1);
+                        newmeteor();
+                    }
+                }
+            }
+
+            // 初始化并开始绘制
+            init();
+            setInterval(draw, 1); // 每毫秒重绘一次
+        </script>
     </body>
-    <script>
-        // 获取画布元素和上下文
-        let canvas = document.querySelector("#canvas");
-        let ctx = canvas.getContext("2d");
-
-        // 设置画布大小为窗口大小
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        // 存储所有流星的数组
-        let meteors = [];
-        // 流星的数量
-        let allstar = 40;
-
-        // 初始化函数，生成指定数量的流星
-        function init() {
-            for (let i = 0; i < allstar; i++) {
-                newmeteor(); // 创建新的流星对象并添加到数组中
-            }
-        }
-
-        // 创建新的流星对象并添加到数组中
-        function newmeteor() {
-            meteors.push({
-                // 流星的尾巴位置
-                lines: [{
-                    x: parseInt(Math.random() * canvas.width),
-                    y: parseInt(Math.random() * canvas.height),
-                }],
-                // 流星的存在时间
-                life: parseInt(Math.random() * 100) + 100,
-                // 流星的年龄
-                age: 0
-            });
-        }
-
-        // 绘制函数，用于绘制所有的流星
-        function draw() {
-            // 清除画布
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // 遍历绘制每个流星
-            for (let i = 0; i < meteors.length; i++) {
-                let meteor = meteors[i];
-                let lines = meteor.lines;
-
-                // 绘制流星的尾巴
-                for (let j = 0; j < lines.length; j++) {
-                    ctx.fillStyle = `rgba(255,255,255,${j / lines.length})`;
-                    ctx.fillRect(lines[j].x, lines[j].y, 1, 1);
-                }
-
-                // 绘制流星的头部
-                ctx.fillStyle = 'yellow';
-                let s_head = lines[lines.length - 1];
-                ctx.fillRect(s_head.x, s_head.y, 2, 2);
-
-                // 更新流星的位置
-                if (meteor.age <= meteor.life / 2) {
-                    lines.push({
-                        x: s_head.x + 1,
-                        y: s_head.y + 0.3
-                    });
-                } else {
-                    lines.shift();
-                }
-                
-                // 增加流星的年龄，并在其寿命结束时移除并生成新的流星
-                meteor.age++;
-                if (meteor.age >= meteor.life) {
-                    meteors.splice(i, 1);
-                    newmeteor();
-                }
-            }
-        }
-
-        // 初始化并开始绘制
-        init();
-        setInterval(draw, 1); // 每毫秒重绘一次
-    </script>
 </html>

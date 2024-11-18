@@ -96,6 +96,19 @@ https://space.bilibili.com/2054654702/
             strong, b {
                 font-weight: bold; /* 加粗 */
             }
+
+            /* For PC => Phone */
+            .my_name {
+                font-size: 74px;
+                font-weight: bold;
+            }
+
+            @media (max-width: 800px) {
+                .my_name {
+                    font-size: 50px;
+                    font-weight: bold;
+                }
+            }
         </style>
     </head>
 
@@ -116,8 +129,7 @@ https://space.bilibili.com/2054654702/
                         <div class="page-wrapper">
                             <ul class="slides s-page-1 " style="display: block; list-style-type: none;">
                             <!-- 此处Visual Studio提示[元素"ul"需要结束标记]，但在第 1054 行已有结束标记。故忽略该警告。 -->
-                                <li class="slide s-section-1 s-first-visible-section css-3757m5 "
-                                    id="section-f_ca721f67-5839-4076-afba-d722f5b4ce9f">
+                                <li class="slide s-section-1 s-first-visible-section css-3757m5">
                                     <div class="waypoint"></div>
                                     <a class="section-anchor"></a>
                                     <!-- Start at here -->
@@ -134,11 +146,9 @@ https://space.bilibili.com/2054654702/
                                                         <div class="s-title sb-title-left-align">
                                                             <div class="s-component s-text">
                                                                 <div class="s-component-content s-font-title">
-                                                                    <h1 style="font-size: 74px;">
-                                                                        <strong>
-                                                                            鸭鸭「カモ」
-                                                                        </strong>
-                                                                    </h1>
+                                                                    <p class="my_name">
+                                                                        鸭鸭「カモ」
+                                                                    </p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -164,8 +174,7 @@ https://space.bilibili.com/2054654702/
                                                                             "鸭子，你可以吃芝士汉堡",
                                                                             "Want it, Merge it.",
                                                                             "Also try F12.",
-                                                                            "不管你有没有昼夜的概念，首先祝你早上 中午 晚上好！",// 确定位置 index 11
-                                                                            "生死别离，人世长情。逝者已逝，不必挂念。"
+                                                                            "不管你有没有昼夜的概念，首先祝你早上 中午 晚上好！"// 确定位置 index 11
                                                                         ];
 
                                                                         // ----------- 处理各个时段的消息 -----------
@@ -249,7 +258,7 @@ https://space.bilibili.com/2054654702/
                                                             <div class="s-button s-component">
                                                                 <div>
                                                                     <div class="s-component-content css-owv3vc">
-                                                                        <a class="s-common-button css-chf7i2  s-font-button medium"
+                                                                        <a class="s-common-button css-chf7i2 s-font-button medium"
                                                                             id="custom-btn"
                                                                             href="https://space.bilibili.com/2054654702"
                                                                             data-component="button" target="_blank"
@@ -265,8 +274,7 @@ https://space.bilibili.com/2054654702/
                                     </div>
                                     <!-- End in the here -->
                                 </li>
-                                <li class="slide s-section-2 css-1rkmeg4"
-                                    id="section-f_4231182a-1806-4b57-a341-f2d6525035cc">
+                                <li class="slide s-section-2 css-1rkmeg4">
                                     <div>
                                         <!-------------------->
                                         <div class="transition lazyloaded s-bg-white s-new-media-section s-section s-media-section s-top-padding-half background-image"

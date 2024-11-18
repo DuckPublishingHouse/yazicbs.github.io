@@ -1,5 +1,6 @@
 // 网页左下角的歌单
 // Song url:https://music.163.com/song/media/outer/url?id=****.mp3 (****处填音乐id)
+// APlayer doc: https://aplayer.js.org/#/zh-Hans/?id=%E5%8F%82%E6%95%B0
 
 /* 
 * JS输出分类: 歌单
@@ -11,91 +12,91 @@ var playlists = [
     // Sweet
     [
         {
-            title: 'Floating Star',
-            author: 'Kirara Magic / Shion Lee',
+            name: 'Floating Star',
+            artist: 'Kirara Magic / Shion Lee',
             url: 'https://music.163.com/song/media/outer/url?id=1830190033.mp3',
-            pic: 'https://p2.music.126.net/E0BDTR7BomvzrYu_4ixzuA==/109951165811598413.jpg'
+            cover: 'https://p2.music.126.net/E0BDTR7BomvzrYu_4ixzuA==/109951165811598413.jpg'
         },
         {
-            title: 'Aurora VIP',
-            author: 'Kirara Magic / Shion Lee',
+            name: 'Aurora VIP',
+            artist: 'Kirara Magic / Shion Lee',
             url: 'https://music.163.com/song/media/outer/url?id=1830187577.mp3',
-            pic: 'https://p2.music.126.net/E0BDTR7BomvzrYu_4ixzuA==/109951165811598413.jpg'
+            cover: 'https://p2.music.126.net/E0BDTR7BomvzrYu_4ixzuA==/109951165811598413.jpg'
         },
     ],
     // 崩铁
     [
         {
-            title: '太空漫步',
-            author: 'HOYO-MiX',
+            name: '太空漫步',
+            artist: 'HOYO-MiX',
             url: 'https://music.163.com/song/media/outer/url?id=2034615687.mp3',
-            pic: 'https://p2.music.126.net/RWIGyShmnjmUxizXco6fVg==/109951168505830245.jpg'
+            cover: 'https://p2.music.126.net/RWIGyShmnjmUxizXco6fVg==/109951168505830245.jpg'
         },
         {
-            title: '水龙吟',
-            author: 'HOYO-MiX',
+            name: '水龙吟',
+            artist: 'HOYO-MiX',
             url: 'https://music.163.com/song/media/outer/url?id=2067222280.mp3',
-            pic: 'https://p1.music.126.net/oDhurcFOPMPVMLnc6xF99A==/109951168765200998.jpg'
+            cover: 'https://p1.music.126.net/oDhurcFOPMPVMLnc6xF99A==/109951168765200998.jpg'
         },
     ],
     // 原神
     [
         {
-            title: '清润玉响',
-            author: 'HOYO-MiX',
+            name: '清润玉响',
+            artist: 'HOYO-MiX',
             url: 'https://music.163.com/song/media/outer/url?id=2140118672.mp3',
-            pic: 'https://p1.music.126.net/MlajrhHqU-33qDnu41p11w==/109951169447872203.jpg'
+            cover: 'https://p1.music.126.net/MlajrhHqU-33qDnu41p11w==/109951169447872203.jpg'
         },
         {
-            title: '柔灯轻漾时',
-            author: 'HOYO-MiX',
+            name: '柔灯轻漾时',
+            artist: 'HOYO-MiX',
             url: 'https://music.163.com/song/media/outer/url?id=2130083946.mp3',
-            pic: 'https://p2.music.126.net/vkLKNH2WpfYh4p4ACRRYOg==/109951169367650385.jpg'
+            cover: 'https://p2.music.126.net/vkLKNH2WpfYh4p4ACRRYOg==/109951169367650385.jpg'
         },
     ],
     // 崩坏3
     [
         {
-            title: 'Da Capo',
-            author: 'HOYO-MiX',
+            name: 'Da Capo',
+            artist: 'HOYO-MiX',
             url: 'https://music.163.com/song/media/outer/url?id=2026565329.mp3',
-            pic: 'https://p2.music.126.net/awzv1LpuBJiKTeB7roh_Aw==/109951168434956885.jpg'
+            cover: 'https://p2.music.126.net/awzv1LpuBJiKTeB7roh_Aw==/109951168434956885.jpg'
         },
     ],
     // 明日方舟 (塞壬唱片-MSR)
     [
         {
-            title: '不存在的乐园',
-            author: '塞壬唱片-MSR / Erik Castro',
+            name: '不存在的乐园',
+            artist: '塞壬唱片-MSR / Erik Castro',
             url: 'https://music.163.com/song/media/outer/url?id=2053918838.mp3',
-            pic: 'https://p2.music.126.net/kojx4UU24KVgoOf_szFCmg==/109951168665117523.jpg'
+            cover: 'https://p2.music.126.net/kojx4UU24KVgoOf_szFCmg==/109951168665117523.jpg'
         },
         {
-            title: '赴大荒',
-            author: '塞壬唱片-MSR / Kirara Magic',
+            name: '赴大荒',
+            artist: '塞壬唱片-MSR / Kirara Magic',
             url: 'https://music.163.com/song/media/outer/url?id=2124415181.mp3',
-            pic: 'https://p1.music.126.net/ryCmscVNLU0y4BEEQPhTyg==/109951169316167603.jpg'
+            cover: 'https://p1.music.126.net/ryCmscVNLU0y4BEEQPhTyg==/109951169316167603.jpg'
         },
     ],
     // 日推 - Live
     [
         {
-            title: 'jiggy boogy (sped up)',
-            author: 'Study Group',
+            name: 'jiggy boogy (sped up)',
+            artist: 'Study Group',
             url: 'https://music.163.com/song/media/outer/url?id=2615267878.mp3',
-            pic: 'https://p1.music.126.net/E3byOaUZwLP8MNtXfKgvuw==/109951169853517770.jpg'
+            cover: 'https://p1.music.126.net/E3byOaUZwLP8MNtXfKgvuw==/109951169853517770.jpg'
         },
         {
-            title: 'junkie',
-            author: 'Study Group',
+            name: 'junkie',
+            artist: 'Study Group',
             url: 'https://music.163.com/song/media/outer/url?id=2607737920.mp3',
-            pic: 'https://p1.music.126.net/4eYqE7mlVq_fxHihCmUM4g==/109951169778904902.jpg'
+            cover: 'https://p1.music.126.net/4eYqE7mlVq_fxHihCmUM4g==/109951169778904902.jpg'
         },
         {
-            title: 'Fallen Angel',
-            author: 'UnicornPhantom',
+            name: 'Fallen Angel',
+            artist: 'UnicornPhantom',
             url: 'https://music.163.com/song/media/outer/url?id=2071485908.mp3',
-            pic: 'https://p2.music.126.net/RnkKxlngZH2A0KEphrBGnw==/109951168826312208.jpg'
+            cover: 'https://p2.music.126.net/RnkKxlngZH2A0KEphrBGnw==/109951168826312208.jpg'
         },
     ],
 ];

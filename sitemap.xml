@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 生成日期: 2024-11-18T12:09:57.176Z -->
+<!-- 生成日期: 2024-11-20T02:29:14.879Z -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
                xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
@@ -208,6 +208,9 @@
 </url>
 <url>
   <loc>https://duckduckstudio.github.io/yazicbs.github.io/privacy.html</loc>
+</url>
+<url>
+  <loc>https://duckduckstudio.github.io/yazicbs.github.io/zh_cn/debug.html</loc>
 </url>
 <url>
   <loc>https://duckduckstudio.github.io/yazicbs.github.io/zh_cn/index.html</loc>

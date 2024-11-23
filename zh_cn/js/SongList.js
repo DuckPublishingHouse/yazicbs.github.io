@@ -55,6 +55,18 @@ var playlists = [
             url: 'https://music.163.com/song/media/outer/url?id=2130083946.mp3',
             cover: 'https://p2.music.126.net/vkLKNH2WpfYh4p4ACRRYOg==/109951169367650385.jpg'
         },
+        {
+            name: '不再年轻的村庄(轻策夜间)',
+            artist: '陈致逸 / HOYO-MiX',
+            url: 'https://music.163.com/song/media/outer/url?id=1492276660.mp3',
+            cover: 'http://p2.music.126.net/yoRaxBY77koSqhjh52g-DA==/109951165434255510.jpg'
+        },
+        {
+            name: '风轻云暖',
+            artist: 'HOYO-MiX',
+            url: 'https://music.163.com/song/media/outer/url?id=2613484725.mp3',
+            cover: 'http://p1.music.126.net/dH0bfwKCPFdT65ZIe2OUjA==/109951169835593264.jpg'
+        },
     ],
     // 崩坏3
     [
@@ -99,6 +111,12 @@ var playlists = [
             artist: 'UnicornPhantom',
             url: 'https://music.163.com/song/media/outer/url?id=2071485908.mp3',
             cover: 'https://p2.music.126.net/RnkKxlngZH2A0KEphrBGnw==/109951168826312208.jpg'
+        },
+        {
+            name: 'Moon (feat. MYLK)',
+            artist: 'Kirara Magic / MYLK',
+            url: 'https://music.163.com/song/media/outer/url?id=1970065457.mp3',
+            cover: 'http://p1.music.126.net/8iXNNlZSJgePYhBmWpPaVQ==/109951167752893617.jpg'
         },
     ],
 ];

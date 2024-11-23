@@ -9,6 +9,10 @@ updates:
     directory: ".action_scripts/Python/" # Location of package manifests
     schedule:
       interval: "weekly"
+  - package-ecosystem: "pip" # See documentation for possible values
+    directory: "Tools/Fufu_Tools/wiki/files/text/" # Location of package manifests
+    schedule:
+      interval: "weekly"
   - package-ecosystem: "npm" # See documentation for possible values
     directory: ".action_scripts/JavaScript/" # Location of package manifests
     schedule:

@@ -19,6 +19,7 @@ try {
       'debug.html',
       '404.html',
       '无聊闲话.html',
+      'VerificationFailure.html'
     ];
 
     const files = readdirSync(dir);
@@ -30,7 +31,7 @@ try {
       if (stat.isDirectory()) {
         scanDirectory(fullPath);
       } else if (file.endsWith('.html')) {
-        const relativePath = path.relative(docsRoot, fullPath).replace(/\\/g, '/');
+        const relativePath = path.relative(repoRoot, fullPath).replace(/\\/g, '/');
 
         // 如果当前路径在忽略列表中，则跳过
         if (ignorePatterns.some(pattern => relativePath.includes(pattern))) {

@@ -17,11 +17,8 @@ try {
   function getLastCommitDate(filePath) {
     try {
       // 使用 git log 命令获取最后一次提交的时间
-      console.warn(filePath)
       const result = execSync(`git log -1 --format=%cd -- "${filePath}"`, { cwd: repoRoot });
-      console.log(result)
       const lastCommitDate = result.toString().trim();
-      console.log(lastCommitDate)
       // 将日期格式转换为 W3C 日期格式 (UTC)
       const date = new Date(lastCommitDate);
       return date.toISOString(); // 返回 W3C 格式：YYYY-MM-DDTHH:MM:SSZ
@@ -86,9 +83,9 @@ try {
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   sitemap += `<!-- 生成日期: ${currentDate} -->\n`; // 添加生成日期的注释
   sitemap += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-                xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
-                                    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">\n\n`;
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+                                  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">\n\n`;
 
   // 生成 URL 列表
   urls.forEach(url => {

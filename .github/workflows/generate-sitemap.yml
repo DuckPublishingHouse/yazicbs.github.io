@@ -15,11 +15,16 @@ jobs:
     steps:
       - name: 检出仓库
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: 设置 Node.js 环境
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: 设置时区
+        run: sudo timedatectl set-timezone Asia/Shanghai
 
       - name: 创建 Sitemap
         run: node .action_scripts/JavaScript/generate-sitemap.mjs

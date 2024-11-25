@@ -17,11 +17,9 @@ try {
   function getLastCommitDate(filePath) {
     try {
       // 使用 git log 命令获取最后一次提交的时间
-      const result = execSync(`git log -1 --format=%cd -- "${filePath}"`, { cwd: repoRoot });
+      const result = execSync(`git log -1 --format=%cI -- "${filePath}"`, { cwd: repoRoot });
       const lastCommitDate = result.toString().trim();
-      // 将日期格式转换为 W3C 日期格式 (UTC)
-      const date = new Date(lastCommitDate);
-      return date.toISOString(); // 返回 W3C 格式：YYYY-MM-DDTHH:MM:SSZ
+      return lastCommitDate
     } catch (err) {
       console.error(`[ERROR] 获取 ${filePath} 的最后提交时间失败: `, err);
       return ''; // 出错时返回空字符串

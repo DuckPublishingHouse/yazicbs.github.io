@@ -39,9 +39,87 @@
                 <li>Click the link above to search for the website you intended to visit</li>
                 <li>Contact the administrator [Email: <a href="mailto:Yzcbs123@163.com">Yzcbs123@163.com</a>]</li>
             </ol>
+            <h3>如果您是网站管理员:</h3>
+            <h4>访问信息</h4>
+            <ul>
+                <li><strong>ip:</strong> <span id="ip"></span></li>
+                <li><strong>head:</strong> <span id="browser"></span></li>
+                <li><strong>time:</strong> <span id="time"></span></li>
+                <li><strong>resource:</strong> <span id="resource"></span></li>
+            </ul>
+
+            <script>
+                // Get browser type
+                const browser = navigator.userAgent;
+
+                // Get current time
+                const time = new Date().toISOString();
+
+                // Display information
+                document.getElementById('browser').innerText = browser;
+                document.getElementById('time').innerText = time;
+
+                // Get approximate access location
+                /* 
+                * JS输出分类: Location
+                */
+                fetch('https://ipapi.co/json/')
+                    .then(response => response.json())
+                    .then(data => {
+                        const city = data.city; // City | e.g. Zhangzhou
+                        const province = data.region; // province/region | e.g. Fujian
+                        const country = data.country_code; // Country | e.g. CN
+
+                        const cityMessages = {
+                            'CN': {
+                                'Fujian': {
+                                    'Xiamen': '厦门',
+                                    'Quanzhou': '泉州',
+                                    'Fuzhou': '福州',
+                                    'Putian': '莆田',
+                                    'Zhangzhou': '漳州',
+                                    'Nanping': '南平',
+                                    'Longyan': '龙岩',
+                                    'Sanming': '三明',
+                                    'Ningde': '宁德'
+                                },
+                                'Guangdong': {
+                                    'Guangzhou': '广州'
+                                },
+                                'Beijing': '北京',
+                                'Shanghai': '上海',
+                                'Tianjin': '天津',
+                                'Chongqing': '重庆',
+                            },
+                        };
+
+                        let welcomeMessage = '';
+
+                        if (cityMessages[country] && cityMessages[country][province] && cityMessages[country][province][city]) {
+                            welcomeMessage = `${cityMessages[country][province][city]} << ${country} | ${province} | ${city}`;
+                        } else {
+                            console.warn("[WARN(Location-Mapping)] Your region is not mapped, please submit an Issue or PR supplement, remember to bring the console output[TEST(Location)]")
+                            welcomeMessage = `${city || province} << ${country} | ${province} | ${city}`;
+                        }
+
+                        console.log(`%c[TEST(Location)] ${country} | ${province} | ${city}`, 'color: cyan;');
+
+                        const helloSpan = document.getElementById('ip');
+                        helloSpan.textContent = welcomeMessage;
+                    })
+                .catch(error => console.error('[ERROR(Location)] Failed to get location:', error));
+
+                // Get resource
+                const currentUrl = window.location.href;
+                const baseUrl = 'https://github.com/DuckDuckStudio/yazicbs.github.io/tree/main/';
+                const path = currentUrl.replace('https://duckduckstudio.github.io/yazicbs.github.io/', '');
+                const githubLink = baseUrl + path;
+                document.getElementById('resource').innerHTML = '<a href="' + githubLink + '">' + githubLink + '</a>';
+            </script>
+
             <div class="right-text">
                 <p>This page is translated from the Chinese 404 page.</p>
-                <p>Last translated: 2024/8/21</p>
+                <p>Last translated: 2024/11/26</p>
                 <p>&nbsp;</p>
                 <h4>View this pages in other languages:</h4>
                 <p><a href="https://duckduckstudio.github.io/yazicbs.github.io/404.html">中文(简体)</a></p>

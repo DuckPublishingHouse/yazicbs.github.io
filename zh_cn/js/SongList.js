@@ -76,6 +76,18 @@ var playlists = [
             url: 'https://music.163.com/song/media/outer/url?id=2026565329.mp3',
             cover: 'https://p2.music.126.net/awzv1LpuBJiKTeB7roh_Aw==/109951168434956885.jpg'
         },
+        {
+            name: 'ReOracle',
+            artist: '黄霄雲 / HOYO-MiX',
+            url: 'https://music.163.com/song/media/outer/url?id=1920740889.mp3',
+            cover: 'https://p2.music.126.net/T_KEXE301-CuVfgaNYfJJw==/109951167055474167.jpg'
+        },
+        {
+            name: 'Moon Halo (薪炎永燃)', // 坏了，崩坏三还在追我
+            artist: '茶理理 / TetraCalyx / Hanser / HOYO-MiX',
+            url: 'https://music.163.com/song/media/outer/url?id=1859652717.mp3',
+            cover: 'https://p2.music.126.net/ciLKATqflV2YWSV3ltE2Kw==/109951166159281275.jpg'
+        },
     ],
     // 明日方舟 (塞壬唱片-MSR)
     [
@@ -119,6 +131,22 @@ var playlists = [
             cover: 'http://p1.music.126.net/8iXNNlZSJgePYhBmWpPaVQ==/109951167752893617.jpg'
         },
     ],
+    /* 春节
+    [
+        {
+            name: '春节序曲',
+            artist: '中国人民解放军军乐团',
+            url: 'https://music.163.com/song/media/outer/url?id=395304.mp3',
+            cover: 'https://p1.music.126.net/j0g_25GyPhar5xxJoGPZiA==/109951163910801634.jpg'
+        },
+        {
+            name: '好运来',
+            artist: '祖海',
+            url: 'https://music.163.com/song/media/outer/url?id=333750.mp3',
+            cover: 'https://p2.music.126.net/9HMwjKJ28PkHp609d98dJQ==/109951169761022710.jpg'
+        }
+    ],
+    */
 ];
 
 // 从歌单列表中随机选择一个歌单
@@ -135,8 +163,9 @@ const playlistNames = {
     3: "崩坏3",
     4: "明日方舟 (塞壬唱片-MSR)",
     5: "日推 - Live",
+    6: "春节",
     default: "[WARN(歌单-选择-索引越界)] 未定义歌单名称"
-    // 最后更新分类：2024/6/20
+    // 最后更新分类：2024/12/8
 };
 
 // 获取歌单名称

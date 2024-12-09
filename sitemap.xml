@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 生成日期: 2024-12-01T09:53:47.952Z -->
+<!-- 生成日期: 2024-12-09T12:54:47.532Z -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
               xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
@@ -219,7 +219,7 @@
   </url>
   <url>
     <loc>https://duckduckstudio.github.io/yazicbs.github.io/music_games/games/Milthm/index.html</loc>
-    <lastmod>2024-12-01T16:56:48+08:00</lastmod>
+    <lastmod>2024-12-09T20:54:15+08:00</lastmod>
   </url>
   <url>
     <loc>https://duckduckstudio.github.io/yazicbs.github.io/music_games/games/MuseDash/index.html</loc>
@@ -227,7 +227,7 @@
   </url>
   <url>
     <loc>https://duckduckstudio.github.io/yazicbs.github.io/music_games/games/Orzmic/index.html</loc>
-    <lastmod>2024-12-01T17:47:57+08:00</lastmod>
+    <lastmod>2024-12-09T20:54:15+08:00</lastmod>
   </url>
   <url>
     <loc>https://duckduckstudio.github.io/yazicbs.github.io/music_games/games/Other/index.html</loc>
@@ -259,6 +259,6 @@
   </url>
   <url>
     <loc>https://duckduckstudio.github.io/yazicbs.github.io/zh_cn/index.html</loc>
-    <lastmod>2024-11-18T20:09:27+08:00</lastmod>
+    <lastmod>2024-12-09T20:54:15+08:00</lastmod>
   </url>
 </urlset>

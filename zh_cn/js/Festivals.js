@@ -1,6 +1,6 @@
 // 所有变量添加 _year 避免与其他 JS 代码冲突产生 SyntaxError
 const Now_year = new Date();
-const StartTime_year = new Date(Now_year.getFullYear() + "-12-09T18:00:00+08:00"); // 转换成日期对象
+const StartTime_year = new Date(Now_year.getFullYear() + "-01-01T06:00:00+08:00"); // 转换成日期对象
 const EndTime = new Date(Now_year.getFullYear() + "-02-12T18:00:00+08:00"); // 转换成日期对象
 
 if (Now_year >= StartTime_year) {

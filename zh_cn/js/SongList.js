@@ -107,6 +107,15 @@ var playlists = [
     // 日推 - Live
     [
         {
+            name: 'Moon (feat. MYLK)',
+            artist: 'Kirara Magic / MYLK',
+            url: 'https://music.163.com/song/media/outer/url?id=1970065457.mp3',
+            cover: 'http://p1.music.126.net/8iXNNlZSJgePYhBmWpPaVQ==/109951167752893617.jpg'
+        },
+    ],
+    // 纯音乐
+    [
+        {
             name: 'jiggy boogy (sped up)',
             artist: 'Study Group',
             url: 'https://music.163.com/song/media/outer/url?id=2615267878.mp3',
@@ -125,10 +134,10 @@ var playlists = [
             cover: 'https://p2.music.126.net/RnkKxlngZH2A0KEphrBGnw==/109951168826312208.jpg'
         },
         {
-            name: 'Moon (feat. MYLK)',
-            artist: 'Kirara Magic / MYLK',
-            url: 'https://music.163.com/song/media/outer/url?id=1970065457.mp3',
-            cover: 'http://p1.music.126.net/8iXNNlZSJgePYhBmWpPaVQ==/109951167752893617.jpg'
+            name: 'This Is For You',
+            artist: 'Lukrembo',
+            url: 'https://music.163.com/song/media/outer/url?id=2119282905.mp3',
+            cover: 'https://p2.music.126.net/6_oOAFwqRnW1m_S7EZk5OQ==/109951169274100743.jpg'
         },
     ],
     /* 春节
@@ -163,9 +172,10 @@ const playlistNames = {
     3: "崩坏3",
     4: "明日方舟 (塞壬唱片-MSR)",
     5: "日推 - Live",
-    6: "春节",
+    6: "纯音乐",
+    7: "春节...啊？这么快就过节了？？？",
     default: "[WARN(歌单-选择-索引越界)] 未定义歌单名称"
-    // 最后更新分类：2024/12/8
+    // 最后更新分类：2024/12/12
 };
 
 // 获取歌单名称
